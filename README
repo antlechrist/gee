@@ -1,7 +1,9 @@
-Blog tool based HEAVILY on genosite, vee and werc.
+Blog tool based HEAVILY on genosite, sw and werc. Inspired by working with vee.
 
 It'd be cool to get a suckless comment system worked out like werc's blagh.
+I need it to be in sh because I can't run 9base or plan9port on my server.
 
 * genosite: http://hg.suckless.org/genosite
+* sw:       http://nibble.develsec.org/sw.cgi/projects/sw.md
 * vee:      http://www.0x743.com/vee/
 * werc:     http://werc.cat-v.org/
