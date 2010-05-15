@@ -1,1 +1,7 @@
-Command line blog tool based HEAVILY on [vee](http://www.0x743.com/vee/).
+Blog tool based HEAVILY on genosite, vee and werc.
+
+It'd be cool to get a suckless comment system worked out like werc's blagh.
+
+* genosite: http://hg.suckless.org/genosite
+* vee:      http://www.0x743.com/vee/
+* werc:     http://werc.cat-v.org/
