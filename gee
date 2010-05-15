@@ -1,0 +1,650 @@
+#!/bin/sh
+
+#
+# Dependencies:
+# cd, pwd, ls, sort, head, tail, cat, grep, groff, fold, expr
+#
+
+VERSION=0.0
+if [ ! ${EDITOR} ]; then
+	EDITOR=vi
+fi
+MARGIN=78
+FORMAT=html
+INDEX=gee.html
+DIR=.gee
+DRAFT=${DIR}/.gee.tmp.$$
+DATE=`date`
+YEAR=`date "+%Y"`
+TIME=`date "+%Y-%m-%dT%H:%M:%S"`
+SEC=`date "+%s"`
+TITLE=
+DEFAULT_TITLE="Entry #${SEC}"
+HEADERTXT=
+FOOTERTXT="Powered by gee"
+TOP_TPL=./vee-top.tpl
+BOT_TPL=./vee-bottom.tpl
+PREFORMAT_FILTER=./vee-filter  # the filter is assumed to be executable, else it is ignored
+USE_EDITOR=1
+LISTENSTDIN=0
+SORT_ALL="sort -t. +0f -1 +1nr"  # sorts all in file listing
+SORT_NEWEST="sort -t. -nr"       # sorts all new to old
+SORT_OLDEST="sort -t. -r"        # sorts all old to new
+PUBLISHED=`date "+%m/%d/%Y"`     # date formated for index page entry
+FORMAT_FUNC=format_with_fold
+FORMAT_DISPATCHER=default_set_format_func
+FORMAT_CUSTOM_DISPATCHER=custom_set_format_func
+UPDATE_INDEX=update_index
+OUTPUT_TOP=output_top
+OUTPUT_BOT=output_bottom
+FORMAT_CUSTOM_DEFS=./vee-custom.sh  # see example in fee/sample-custom-format/
+
+disclaimer() {
+	cat <<END
+Copyright 2010  Andrew Antle <andrew at antlechrist dot org>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+END
+}
+
+if [ -e "${FORMAT_CUSTOM_DEFS}" ]; then
+	. "${FORMAT_CUSTOM_DEFS}"
+fi
+
+default_set_format_func() {
+	case "$1" in
+		default)
+		FORMAT_FUNC=format_with_fold
+		echo using $FORMAT_FUNC
+		;;
+
+		groff)
+		FORMAT_FUNC=format_with_groff
+		echo using $FORMAT_FUNC
+		;;
+
+		fold)
+		FORMAT_FUNC=format_with_fold
+		echo using $FORMAT_FUNC
+		;;
+
+		none)
+		FORMAT_FUNC=with_no_formatting
+		echo using $FORMAT_FUNC
+		;;
+
+		# if not a supplied format, see if it is in the custom format
+		# file, if it exists
+		*)
+		if [ -e "${FORMAT_CUSTOM_DEFS}" ]; then
+			# call dispatch function that is defined in the custom
+			# format file, pass on format nickname
+			${FORMAT_CUSTOM_DISPATCHER} "${1}"
+		else
+			echo "bad format type"
+			die_cleanly
+		fi
+	esac
+}
+
+usage() {
+	cat <<END
+gee - A Command Line Blog Tool Thing-a-ma-jig
+=============================================
+Version: ${VERSION}
+
+Options
+-------
+
+-b                Batch mode. Used when piping in message via stdin
+-B <bottom_tpl>   Define bottom template. Default is './vee-bottom.tpl'
+-c [1-9\d*]       Specify the number of characters 'fold' allows per line;
+                  this only applies when 'fold' [-f] is used
+-d <publish_dir>  Specify the directory '.vee/' is in; defaults to PWD
+-f <format>       Use defined format instead of the default 'groff';
+                  'groff', 'fold', and 'none' are supported out of the box
+-h                Print this help
+-i <filename>     Specify a custom INDEX over the default
+-I                Force INDEX to be 'index.html'
+-l                Edit latest post's *.raw; used with [-r] publishes changes;
+                  calls reformat automatically
+-L [1-9\d*]       Edit the Nth latest, relative to last post; lp starts at 1
+-m <message>      Specify entry message at the command line and avoid EDITOR
+-n                List all entries, newest first, then exits
+-o                List all entries, oldest first, then exits
+-p                See what *.raw files don't have an entry in INDEX
+-P                Completely delete all *.raw and formatted files associated
+                  with posts that are listed with -p
+-r [1-9\d*]       Reformat the Nth latest post
+-R                Reformat _all_ .vee/*.raw files; -c applies as well
+-s <summary>      Specify text placed below title in INDEX
+-t <title>        Specify title at the command line and avoid annoying
+                  default prompt
+-T <top_tpl>      Define top template; default is './vee-top.tpl'
+-v                Print VERSION and exit
+-x <filter>       Define filter if not using the default './vee-pre';
+                  filter must be executable, i.e. 'chmod 755 vee-pre'
+
+Usage
+-----
+
+    $ vee
+
+USER will be prompted for title and presented with EDITOR.
+If no default dir/files are found, they will be created.
+
+    $ vee -t "this is the title"
+
+USER will just be presented with an EDITOR session.
+
+    $ cat text.txt | vee -b -t "my title" -m "text to go before stdin"
+
+Publishes contents of text.txt with provided title; '-m <message>' will be
+shown above the cat'd text.
+
+    $ vee -l    # edit and reformat the latest post
+    $ vee -L 5  # allows one to edit and reformats the fifth latest post
+    $ vee -r 8  # reformats the 8th latest post
+    $ vee -R    # reformats ALL posts that have *.raw files
+
+### To delete a post forever
+
+1. Delete the entry in INDEX
+2. Purge the entry:
+
+    $ vee -p  # make sure it's the one you want to purge
+    $ vee -P  # purge it!
+
+Notes
+-----
+
+1. Batch mode looks for piped input from stdin; if none after a short time,
+   message creation fails UNLESS something was passed in via [-m] as well.
+   If nothing was passed in via [-t] for the title, some default is used;
+   This is set at the top of the script as 'DEFAULT_TITLE'.
+2. Interactive mode (default) prompts for a title if no [-t] is provided.
+   Such is the case even if [-m] is used.
+3. Patches are welcome; the goal is not more feature bloat, but a nicer way
+   of dealing with stdin, etc. would be welcomed.
+END
+echo
+disclaimer
+exit 1
+}
+
+update_index() {
+	echo "<!-- ;${SEC}; -->${PUBLISHED}: <a href=\"${DIR}/${SEC}.${TIME}.${FORMAT}\">${TITLE}</a>" >> ${INDEX}
+	if [ -n "${SUMMARY}" ]; then
+		SEC=`expr $SEC - 1`
+		echo "<!-- ;${SEC}; -->${SUMMARY}" >> ${INDEX}
+	fi
+}
+
+output_top() {
+	echo ${HEADERTXT} >> ${FINAL}
+	if [ -e "${TOP_TPL}" ]; then
+		cat "${TOP_TPL}" >> ${FINAL}
+		echo "<pre>" >> ${FINAL}
+	else
+		cat >> ${FINAL} <<END
+<!doctype html>
+<head>
+<title>${TITLE} - ${DATE}</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="/favicon.png" rel="icon" type="image/png" />
+<link href="/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<pre>
+<a href="../${INDEX}">[index]</a>
+<a href="./${RAWNAME}">[raw]</a>
+<a href="../">[main]</a>
+</pre>
+END
+	fi
+}
+
+output_bottom() {
+	echo              >> ${FINAL}
+	echo "<pre>"      >> ${FINAL}
+	echo --           >> ${FINAL}
+	echo ${FOOTERTXT} >> ${FINAL}
+	if [ -e "${BOT_TPL}" ]; then
+		cat "${BOT_TPL}" >> ${FINAL}
+	fi
+	echo "</pre>"  >> ${FINAL}
+	echo "</body>" >> ${FINAL}
+	echo "</html>" >> ${FINAL}
+} 
+
+#
+# Do I need this? I don't care for groff.
+#
+format_with_groff() {
+	groff -man -Tascii ${RAW} >> bla.raw
+	# sed one liner from http://sed.sourceforge.net/sed1line.txt
+	sed '/^$/N;/\n$/D' bla.raw >> ${FINAL}
+	rm bla.raw
+}
+
+with_no_formatting() {
+	cat ${RAW} >> ${FINAL}
+}
+
+format_with_fold() {
+	if [ 0 -lt "${MARGIN}" ]; then
+		fold -s -w ${MARGIN} ${RAW} >> ${FINAL}
+	else
+		with_no_formatting
+	fi
+}
+
+if [ -e "${FORMAT_CUSTOM_DEFS}" ]; then
+	. "${FORMAT_CUSTOM_DEFS}"
+fi
+
+#
+# All filters must accept input from stdin and output to stdout.
+# Default arguments include:
+#
+preformat() {
+	if [ -x "${PREFORMAT_FILTER}" ]; then
+		cat "${DRAFT}" | "${PREFORMAT_FILTER}" "${FORMAT_FUNC}" >> "${DRAFT}.tmp"
+		mv -f "${DRAFT}.tmp" "${DRAFT}"
+	fi
+}
+
+#postformat() {
+#	if [ -x "${POSTFORMAT_FILTER}" ]; then
+#		cat "${FINAL}" | "${POSTFORMAT_FILTER}" > "${FINAL}.tmp"
+#		mv -f "${FINAL}.tmp" "${FINAL}"
+#	fi
+#}
+
+format_main() {
+	FINAL=${DIR}/${1}
+	FINALNAME=${1}
+	RAW=${DIR}/${2}
+	RAWNAME=${2}
+	preformat
+
+	# Save raw form before formatting if it doesn't exist
+	# which is the case when reformatting all
+	if [ ! -e ${RAW} ]; then
+		echo "<pre>"  >> ${RAW}
+		echo ${DATE}  >> ${RAW}  # In RAW, line 1 is date
+		echo          >> ${RAW}
+		echo ${TITLE} >> ${RAW}  # In RAW, line 2 is title
+		echo          >> ${RAW}
+		echo "--"     >> ${RAW}
+		echo "</pre>" >> ${RAW}
+		echo          >> ${RAW}  # This blank line is important
+		cat ${DRAFT}  >> ${RAW}
+	fi
+	${OUTPUT_TOP}
+	${FORMAT_FUNC}
+	${OUTPUT_BOT}
+
+	#postformat  # Not sure about this one yet
+}
+
+reformat_singleton() {
+	if [ -e "${DIR}/${1}.raw" ]; then
+	cat "${DIR}/${1}.raw" >> "${DRAFT}"
+	format_main "${1}.${FORMAT}" "${1}.raw"
+	fi
+}
+
+reformat_all() {
+	FILES=`ls -c ${DIR}/*.raw | ${SORT_ALL}`
+	for RAW in $FILES; do
+		FULLNAME="${RAW}"
+		DIR="${FULLNAME%/*}"
+		FILE="${FULLNAME##*/}"
+		MAXBASE="${FILE%.*}"
+		MINBASE="${FILE%%.*}"
+		MAXSUF="${FILE#*.}"
+		MINSUF="${FILE##*.}"
+		reformat_singleton "${MAXBASE}"
+	done
+}
+
+newest_first() {
+	FILES=`ls -c ${DIR}/*.raw | ${SORT_NEWEST}`
+	echo ${FILES}
+}
+
+list_newest_first() {
+	FILES=`newest_first`
+	COUNT=1
+	for FILE in ${FILES}; do
+		FULLNAME="${FILE}"
+		DIR="${FULLNAME%/*}"
+		FILE="${FULLNAME##*/}"
+		MAXBASE="${FILE%.*}"
+		TITLE=`head -n 3 ${DIR}/${FILE} | tail -n 1`
+		printf "%7d)  " $COUNT
+		echo ${MAXBASE} :: ${TITLE}
+		COUNT=`expr $COUNT + 1`
+	done
+}
+
+oldest_first() {
+	FILES=`ls -c ${DIR}/*.raw | ${SORT_OLDEST}`
+	echo ${FILES}
+}
+
+list_oldest_first() {
+	FILES=`oldest_first`
+	for FILE in ${FILES}; do
+		FULLNAME="${FILE}"
+		DIR="${FULLNAME%/*}"
+		FILE="${FULLNAME##*/}"
+		MAXBASE="${FILE%.*}"
+		TITLE=`head -n 3 ${DIR}/${FILE} | tail -n 1`
+		echo ${MAXBASE} :: ${TITLE}
+	done
+}
+
+get_path2post() {
+	FILES=`ls -c ${DIR}/*.raw | ${SORT_NEWEST}`
+	GOAL=${1}
+	COUNT=1
+	for FILE in ${FILES}; do
+		FULLNAME="${FILE}"
+		DIR="${FULLNAME%/*}"
+		FILE="${FULLNAME##*/}"
+		MAXBASE="${FILE%.*}"
+		if [ ${COUNT} -eq ${GOAL} ]; then
+			echo ${MAXBASE}
+			break
+		fi
+		COUNT=`expr ${COUNT} + 1`
+	done
+}
+
+purge_entries() {
+	LEVEL=$1
+	COUNT=0
+	if [ ! -e "${INDEX}" ]; then
+		echo "Can't find index, \"${INDEX}\""
+		die_cleanly
+	fi
+	FILES=`newest_first`
+	for FILE in ${FILES}; do
+		FULLNAME="${FILE}"
+		DIR="${FULLNAME%/*}"
+		FILE="${FULLNAME##*/}"
+		MAXBASE="${FILE%.*}"
+		ENTRY=`grep "$MAXBASE" $INDEX`
+		if [ -z "${ENTRY}" ]; then
+			COUNT=`expr $COUNT + 1`
+			if [ $LEVEL -eq 1 ]; then
+				echo "$DIR/$FILE (not really purged, use -P)"
+			elif [ $LEVEL -eq 2 ]; then
+				echo "$DIR/$MAXBASE[.raw,$FORMAT] (purged)"
+				rm -f $DIR/$MAXBASE*
+			fi
+		fi
+	done
+	echo "removed $COUNT entrie\(s\)..."
+}
+
+die_cleanly() {
+	if [ -e ${DRAFT} ]; then
+		rm -f ${DRAFT}
+	fi
+	exit 0
+}
+
+POST2REFORMAT=0
+REFORMATALL=0
+PURGELEVEL=0
+POST2EDIT=0
+SUMMARY=
+MESSAGE=
+
+while getopts 'f:m:t:T:c:d:i:IbB:hRr:lL:novx:X:Pps:' option; do
+	case "$option" in
+		i)
+		INDEX="${OPTARG}"   # Specify INDEX to $OPTARG
+		;;
+
+		I)
+		INDEX="index.html"  # Force INDEX to index.html
+		;;
+
+		d)
+		if [ -d "${OPTARG}" ]; then
+			cd "${OPTARG}"
+		else
+			echo "${OPTARG}" is not a directory!
+			die_cleanly
+		fi
+		echo `pwd`
+		;;
+
+		r)
+		POST2REFORMAT="${OPTARG}"
+		;;
+
+		R)
+		REFORMATALL=1
+		;;
+
+		b)
+		LISTENSTDIN=1
+		USE_EDITOR=0
+		;;
+
+		B)
+		BOT_TPL="${OPTARG}"
+		;;
+
+		f)
+		${FORMAT_DISPATCHER} "${OPTARG}"  # Default is set_format_func
+		;;
+
+		c)
+		MARGIN=${OPTARG}  # This option is about to be deprecated
+		;;
+
+		l)
+		POST2EDIT=1
+		;;
+
+		L)
+		POST2EDIT="${OPTARG}"
+		;;
+
+		m)
+		MESSAGE="${OPTARG}"
+		USE_EDITOR=0
+		;;
+
+		n)
+		list_newest_first
+		die_cleanly
+		;;
+
+		o)
+		list_oldest_first
+		die_cleanly
+		;;
+
+		s)
+		SUMMARY="${OPTARG}"
+		;;
+
+		t)
+		TITLE="${OPTARG}"
+		;;
+
+		T)
+		TOP_TPL="${OPTARG}"
+		;;
+
+		v)
+		echo $VERSION
+		die_cleanly
+		;;
+
+		p)
+		PURGELEVEL=1
+		;;
+
+		P)
+		PURGELEVEL=2
+		;;
+
+		h)
+		usage
+		die_cleanly
+		;;
+
+		x)
+		PREFORMAT_FILTER="${OPTARG}"
+		;;
+
+		?)
+		die_cleanly
+		;;
+	esac
+done
+
+post_opts() {
+	if [ ${PURGELEVEL} -ge 1 ]; then
+		purge_entries "${PURGELEVEL}"
+		die_cleanly
+	fi
+
+	if [ ${POST2EDIT} -ge 1 ]; then
+		LATEST=`get_path2post ${POST2EDIT}`
+		${EDITOR} ${DIR}/${LATEST}.raw
+		POST2REFORMAT=${POST2EDIT}
+	fi
+
+	if [ ${POST2REFORMAT} -ge 1 ]; then
+		LATEST=`get_path2post ${POST2REFORMAT}`
+		reformat_singleton "${LATEST}"
+		die_cleanly
+	fi
+
+	if [ ${REFORMATALL} -eq 1 ]; then
+		reformat_all
+		die_cleanly
+	fi
+
+	# Block 'vee -l' (without [-r]) from executing
+	if [ ${POST2EDIT} -ge 1 ]; then
+		die_cleanly
+	fi
+
+	# Batch message creation: -m and stdin
+	if [ -n "${MESSAGE}" ]; then
+		echo "${MESSAGE}" >> ${DRAFT}
+	fi
+
+	if [ ${LISTENSTDIN} -eq 1 ]; then
+		# Ensure leading spaces are retained
+		IFS=""
+		# Break after 1 sec of no stdin
+		while read -r IN <&0 ; do
+			echo "${IN}"
+			echo "${IN}" >> ${DRAFT}
+			LISTENSTDIN=1
+			USE_EDITOR=0
+		done
+	fi
+}
+
+# Generate INDEX if none exists
+setup() {
+	mkdir -p ${DIR} || echo ${DIR} exists...
+	if [ ! -e ${INDEX} ]; then
+		echo
+		echo "...creating ${INDEX}"
+		cat >> ${INDEX} <<END
+<!doctype html>
+<head>
+<title>my vee index</title>
+<!-- ;10000000000000000000000000; open pre tag  -->
+<!-- ;1000000000000000000000000;  utf8 meta tag -->
+</head>
+<body>
+<!-- ;100000000000000000000000;   fixed content -->
+<!-- ;10000000000000000000000;    fixed content -->
+<!-- ;1000000000000000000000;     fixed content -->
+<!-- ;3; fixed content -->
+<!-- ;2; fixed content -->
+<!-- ;1; fixed content -->
+<pre>Powered by <a href="">fee</a></pre>
+<!-- ;0; closing pre tag -->
+</body>
+</html>
+END
+	fi
+}
+
+sort_index() {
+	sort -t';' +0f -1 +1nr ${INDEX} > .${INDEX}.$$.sorted
+	mv .${INDEX}.$$.sorted ${INDEX}
+}
+
+use_editor() {
+	if [ ${USE_EDITOR} -eq 1 ]; then
+		OK=0
+		${EDITOR} ${DRAFT} && OK=1
+
+		if [ $OK -ne 1 ]; then
+			echo "There has been a problem with $EDITOR"
+			exit 1
+		fi
+	fi
+}
+
+get_title() {
+	if [ -z "${TITLE}" ]; then
+		TITLE=$DEFAULT_TITLE
+	fi
+}
+
+read_config() {
+	if [ -e ./.veerc ]; then
+		. ./.veerc
+	fi
+}
+
+#
+# Main
+#
+read_config
+post_opts
+setup
+get_title
+use_editor
+
+if [ -e ${DRAFT} ]; then
+	format_main "${SEC}.${TIME}.${FORMAT}" "${SEC}.${TIME}.raw"
+	$UPDATE_INDEX
+	sort_index
+	die_cleanly
+else
+	echo "Error! ${DRAFT} not found"
+fi
