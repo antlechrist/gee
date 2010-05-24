@@ -70,7 +70,7 @@ and <a href="http://www.vim.org/">vim</a><br />
 </div>
 <div class="right">
 Last modified: $mtime<br />
-<a href="/LICENSE">Copyright 2009-2010 Andrew Antle</a>
+<a href="/LICENSE">© 2009-2010 Andrew Antle</a>
 </div>
 </div>
 </div>
@@ -112,4 +112,3 @@ fi
 find . -type l | xargs rm -f
 
 process "./" "<a href=\"/\">$URL/" /
-
