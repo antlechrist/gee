@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# It'd be cool to figure out how to generate an atom feed like jekyll.
+#
+# This is pseudo-code.
+#
+# title=`cat $entry | sed 1q`
+# updated=`date -u --rfc-3339=seconds | sed 's/ /T/'`  # like werc
+
+entry() {
+	cat <<END
+<entry>
+<title>$title</title>
+<link href="$URL/$base.html" />
+<updated>$entry_updated</updated>
+<summary>
+END
+	cat $base
+	cat <<END
+</summary>
+</entry>
+END
+}
+
+feed() {
+	cat <<END
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>$URL</title>
+<link href="http://$URL/feed/" rel="self" />
+<link href="http://$URL/" />
+<updated>$updated</updated>
+<author>
+<name>Andrew Antle</name>
+<email>andrew@antlechrist.org</email>
+</author>
+END
+	entry
+	cat <<END
+</feed>
+END
+}

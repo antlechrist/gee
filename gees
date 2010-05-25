@@ -53,7 +53,7 @@ page() {
 <ul>
 END
 	menu $1 $2
-cat <<END
+	cat <<END
 <div id="main-copy">
 END
 	cat $1$2.$EXT | tr -d '\r' | $FMT
