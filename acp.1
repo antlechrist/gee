@@ -1,0 +1,59 @@
+.Dd $Mdocdate: June 04 2010 $
+.Dt ACP 1
+.Os
+.Sh NAME
+.Nm acp
+.Nd sync antlechrist.org files
+.Sh SYNOPSIS
+.Nm acp
+.Op Fl a
+.Op Fl s
+.Op Fl d
+.Op Fl f
+.Sh DESCRIPTION
+The
+.Nm
+utility syncs files between slack.antle.dmn and antlechrist.org.
+.Bl -tag -width Ds
+.It Fl a
+Pull from andrew.antlechrist.org
+.It Fl s
+Push to andrew.antlechrist.org
+.It Fl d
+Pull from antlechrist.org (full)
+.It Fl f
+Push to antlechrist.org (full)
+.El
+.\".Sh IMPLEMENTATION NOTES
+.Sh ENVIRONMENT
+.Ev USER
+Name of subdomain for the
+.Fl a
+and 
+.Fl s
+options.
+.Sh FILES
+.Ar ~/etc/acp.conf
+Specifies the variables in use.
+.\".Sh EXIT STATUS
+.Sh EXAMPLES
+After editing the docs directory, push to remote:
+.Pp
+.D1 $ acp \-s
+.Pp
+Make sure you're up to date:
+.Pp
+.D1 $ acp \-d
+.Pp
+Sync a new post:
+.Pp
+.D1 $ acp \-f
+.\".Sh DIAGNOSTICS
+.\".Sh STANDARDS
+.\".Sh HISTORY
+.Sh AUTHOR
+Andrew Antle
+.\".Sh CAVEATS
+.Sh BUGS
+Ha! Surely you must be joking. <bugs at antlechrist dot org>
+.\".Sh SECURITY CONSIDERATIONS
