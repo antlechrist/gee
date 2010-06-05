@@ -4,7 +4,7 @@
 # Andrew Antle - http://antlechrist.org/
 
 # Source the configuration file.
-. ~/etc/acp.conf
+. ~/.acp.conf
 
 # `-a` pulls $USER's subdomain
 # `-s` pushes $USER's subdomain

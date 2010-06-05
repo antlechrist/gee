@@ -3,7 +3,7 @@
 .Os
 .Sh NAME
 .Nm acp
-.Nd sync antlechrist.org files
+.Nd sync $RHOST files
 .Sh SYNOPSIS
 .Nm acp
 .Op Fl a
@@ -13,18 +13,17 @@
 .Sh DESCRIPTION
 The
 .Nm
-utility syncs files between slack.antle.dmn and antlechrist.org.
+utility syncs files between $DIR and $RHOST.
 .Bl -tag -width Ds
 .It Fl a
-Pull from andrew.antlechrist.org
+Pull from $RHOST
 .It Fl s
-Push to andrew.antlechrist.org
+Push to $USER.$RHOST
 .It Fl d
-Pull from antlechrist.org (full)
+Pull from $RHOST (full)
 .It Fl f
-Push to antlechrist.org (full)
+Push to $RHOST (full)
 .El
-.\".Sh IMPLEMENTATION NOTES
 .Sh ENVIRONMENT
 .Ev USER
 Name of subdomain for the
@@ -33,9 +32,8 @@ and
 .Fl s
 options.
 .Sh FILES
-.Ar ~/etc/acp.conf
+.Ar ~/.acp.conf
 Specifies the variables in use.
-.\".Sh EXIT STATUS
 .Sh EXAMPLES
 After editing the docs directory, push to remote:
 .Pp
@@ -48,12 +46,7 @@ Make sure you're up to date:
 Sync a new post:
 .Pp
 .D1 $ acp \-f
-.\".Sh DIAGNOSTICS
-.\".Sh STANDARDS
-.\".Sh HISTORY
 .Sh AUTHOR
 Andrew Antle
-.\".Sh CAVEATS
 .Sh BUGS
 Ha! Surely you must be joking. <bugs at antlechrist dot org>
-.\".Sh SECURITY CONSIDERATIONS
