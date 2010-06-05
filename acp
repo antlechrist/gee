@@ -1,15 +1,11 @@
 #!/bin/sh
 #
 # ~/bin/acp
-# Andrew Antle - http://antlechrist.org/
+#
+# See acp(1) for usage.
 
-# Source the configuration file.
 . ~/.acp.conf
 
-# `-a` pulls $USER's subdomain
-# `-s` pushes $USER's subdomain
-# `-d` pulls the entire site
-# `-f` pushes the entire site
 case "$1" in
 -a)
 	$RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
@@ -28,6 +24,6 @@ case "$1" in
 		$DIR/ $RUSER@$RHOST:$DIR/
 	;;
 *)
-	echo "usage: `basename $0` {-a|-s|-d|-f}"
+	echo "usage: `basename $0` [-a] [-s] [-d] [-f]"
 	;;
 esac
