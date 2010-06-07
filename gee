@@ -1,0 +1,146 @@
+#!/bin/sh
+# vim:ft=sh:ts=2:sw=2:et:ai:
+
+. ~/.geerc
+
+# functions
+menu() {
+  for i in `ls -F $1 | grep -v index.$EXT | sort $REVERSE`; do
+    case $i in
+    *.$EXT)
+      base=`echo $i | sed "s/.\$EXT$//"`
+      cleanbase=`echo $base | sed 's/_/ /g'`
+      if test "x$base" = "x$2"; then
+        echo "<li class='current'><a href=\"$base.html\">$cleanbase</a></li>"
+      else
+        echo "<li><a href=\"$base.html\">$cleanbase</a></li>"
+      fi
+      cur=1
+      ;;
+    */)
+      echo "<li><a href=\"$i\">$i</a></li>"
+      ;;
+    esac
+  done
+  cat <<END
+</ul>
+</div>
+END
+}
+
+page() {
+  mtime=`ls -l $1$2.$EXT | awk '{ print $6" at "$7 }'`
+  title="$URL`echo $4 | sed 's/.html//'`"
+  cat <<END
+<!doctype html>
+<head>
+<title>$title</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="/favicon.png" rel="icon" type="image/png" />
+<link href="/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="container">
+<div class="midHeader">
+<div class="headerTitle">$3</a></div>
+</div>
+<div id="menu">
+<ul>
+END
+  menu $1 $2
+  cat <<END
+<div id="main-copy">
+END
+  cat $1$2.$EXT | tr -d '\r' | $FMT
+  cat <<END
+</div>
+<div id="footer">
+<div class="left">
+Powered by <a href="http://hg.suckless.org/genosite">genosite</a>,
+<a href="http://www.pell.portland.or.us/~orc/Code/discount/">discount</a>,
+and <a href="http://www.vim.org/">vim</a><br />
+<a href="$2.$EXT">Page source</a> |
+<a href="mailto:andrew at antlechrist dot org">Contact</a> |
+<a href="http://antlechrist.org/">61:6e:74:6c:65:63:68:72:69:73:74:2e:6f:72:67</a>
+</div>
+<div class="right">
+Last modified: $mtime<br />
+<a href="/LICENSE">© 2009-2010 Andrew Antle</a>
+</div>
+</div>
+</div>
+</body>
+</html>
+END
+}
+
+process() {
+  for i in `ls -F $1`; do
+    case $i in
+    *.$EXT)
+      echo processing $1$i
+      base=`echo $i | sed "s/.\$EXT$//"`
+      if test x$base = xindex; then
+        title=$3
+      else
+        title=$3$base.html
+      fi
+      page "$1" "$base" "$2" "$title" > "$1$base.html"
+      ;;
+    */)
+      process "$1$i" "$2</a><a href=\"$PREFIX`echo $1 | \
+      sed 's/.\///'`$i\">$i" $3$i
+      ;;
+    *)
+      ;;
+    esac
+  done
+}
+
+make_site() {
+  if test $1; then
+    cd $1
+  fi
+  process "./" "<a href=\"/\">$URL/" /
+}
+
+usage() {
+  echo "see gee(1)"
+  exit 85
+}
+
+# main
+if test $# -eq 0; then
+  usage
+fi
+
+while getopts ":ce:lmnops" Option; do
+  case $Option in
+  c) rm `du -a | awk '{ print $2 }' | grep \\.html$`
+    ;;
+  e) $EDITOR $DIR/posts/`date '+%Y-%m-%d'`-"$OPTARG".md
+    ;;
+  l) $RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
+       $RUSER@$RHOST:$DIR/$USER/ $DIR/$USER/
+    ;;
+  m) $RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
+       $DIR/$USER/ $RUSER@$RHOST:$DIR/$USER/
+    ;;
+  n) $RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
+       $RUSER@$RHOST:$DIR/ $DIR/
+    ;;
+  o) $RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
+       $DIR/ $RUSER@$RHOST:$DIR/
+    ;;
+  p) URL=$POSTURL REVERSE="-r" make_site
+    ;;
+  s) URL=$FULLURL make_site 
+    ;;
+  *) usage
+    ;;
+  esac
+done
+
+shift $(($OPTIND - 1))
+
+exit $?

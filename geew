@@ -1,3 +1,0 @@
-#!/bin/sh
-
-$EDITOR $html/posts/`date '+%Y-%m-%d'`-${1}.md

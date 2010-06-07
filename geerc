@@ -1,0 +1,13 @@
+EXT=md
+FMT=markdown
+PREFIX=/
+FULLURL=
+POSTURL=
+RSYNC=rsync
+SSH=ssh
+PORT=
+DIR=
+USER=$USER
+RHOST=
+RUSER=
+EXCLUDE=""

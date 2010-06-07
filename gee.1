@@ -1,0 +1,61 @@
+% GEE(1) User Manual
+% Andrew Antle
+% June 7, 2010
+
+# NAME
+
+`gee` - site generation tool
+
+# SYNOPSIS
+
+`gee` [*options*]
+
+# DESCRIPTION
+
+`gee` is a site generation tool based on [genosite][].  It can generate a
+site or ``weblog'', clean generated files, and push and pull a local dir to
+a remote server.  `gee` relies on many normal Unix tools.
+
+# OPTIONS
+
+`-c`
+: Clean generated html files.
+
+`-e`
+: Compose a post with your favorite editor.
+
+`-l`
+: Pull $USER's subdomain.
+
+`-m`
+: Push $USER's subdomain.
+
+`-n`
+: Pull full site.
+
+`-o`
+: Push full site.
+
+`-p`
+: Generate 'posts' site.
+
+`-s`
+: Generate 'full' site.
+
+`*`
+: Display usage.
+
+# SEE ALSO
+
+`rsync(1)`,
+`ssh(1)`,
+`markdown(1)`,
+`sed(1)`,
+`awk(1)`,
+`ls(1)`,
+`echo(1)`,
+`cat(1)`,
+`tr(1)`,
+`sort(1)`,
+`grep(1)`,
+`vi(1)`
