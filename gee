@@ -1,37 +1,36 @@
 #!/bin/sh
-# vim:ft=sh:ts=2:sw=2:et:ai:
 
 . ~/.geerc
 
 # functions
 menu() {
-  for i in `ls -F $1 | grep -v index.$EXT | sort $REVERSE`; do
-    case $i in
-    *.$EXT)
-      base=`echo $i | sed "s/.\$EXT$//"`
-      cleanbase=`echo $base | sed 's/_/ /g'`
-      if test "x$base" = "x$2"; then
-        echo "<li class='current'><a href=\"$base.html\">$cleanbase</a></li>"
-      else
-        echo "<li><a href=\"$base.html\">$cleanbase</a></li>"
-      fi
-      cur=1
-      ;;
-    */)
-      echo "<li><a href=\"$i\">$i</a></li>"
-      ;;
-    esac
-  done
-  cat <<END
+	for i in `ls -F $1 | grep -v index.$EXT | sort $REVERSE`; do
+		case $i in
+		*.$EXT)
+			base=`echo $i | sed "s/.\$EXT$//"`
+			cleanbase=`echo $base | sed 's/_/ /g'`
+			if test "x$base" = "x$2"; then
+				echo "<li class='current'><a href=\"$base.html\">$cleanbase</a></li>"
+			else
+				echo "<li><a href=\"$base.html\">$cleanbase</a></li>"
+			fi
+			cur=1
+			;;
+		*/)
+			echo "<li><a href=\"$i\">$i</a></li>"
+			;;
+		esac
+	done
+	cat <<END
 </ul>
 </div>
 END
 }
 
 page() {
-  mtime=`ls -l $1$2.$EXT | awk '{ print $6" at "$7 }'`
-  title="$URL`echo $4 | sed 's/.html//'`"
-  cat <<END
+	mtime=`ls -l $1$2.$EXT | awk '{ print $6" at "$7 }'`
+	title="$URL`echo $4 | sed 's/.html//'`"
+	cat <<END
 <!doctype html>
 <head>
 <title>$title</title>
@@ -47,12 +46,12 @@ page() {
 <div id="menu">
 <ul>
 END
-  menu $1 $2
-  cat <<END
+	menu $1 $2
+	cat <<END
 <div id="main-copy">
 END
-  cat $1$2.$EXT | tr -d '\r' | $FMT
-  cat <<END
+	cat $1$2.$EXT | tr -d '\r' | $FMT
+	cat <<END
 </div>
 <div id="footer">
 <div class="left">
@@ -75,70 +74,79 @@ END
 }
 
 process() {
-  for i in `ls -F $1`; do
-    case $i in
-    *.$EXT)
-      echo processing $1$i
-      base=`echo $i | sed "s/.\$EXT$//"`
-      if test x$base = xindex; then
-        title=$3
-      else
-        title=$3$base.html
-      fi
-      page "$1" "$base" "$2" "$title" > "$1$base.html"
-      ;;
-    */)
-      process "$1$i" "$2</a><a href=\"$PREFIX`echo $1 | \
-      sed 's/.\///'`$i\">$i" $3$i
-      ;;
-    *)
-      ;;
-    esac
-  done
+	for i in `ls -F $1`; do
+		case $i in
+		*.$EXT)
+			echo processing $1$i
+			base=`echo $i | sed "s/.\$EXT$//"`
+			if test x$base = xindex; then
+				title=$3
+			else
+				title=$3$base.html
+			fi
+			page "$1" "$base" "$2" "$title" > "$1$base.html"
+			;;
+		*/)
+			process "$1$i" "$2</a><a href=\"$PREFIX`echo $1 | \
+			sed 's/.\///'`$i\">$i" $3$i
+			;;
+		*)
+			;;
+		esac
+	done
 }
 
 make_site() {
-  if test $1; then
-    cd $1
-  fi
-  process "./" "<a href=\"/\">$URL/" /
+	if test $1; then
+		cd $1
+	fi
+	process "./" "<a href=\"/\">$URL/" /
 }
 
 usage() {
-  echo "see gee(1)"
-  exit 85
+	echo "usage: gee [-c] [-e] filename [-l] [-m] [-n] [-o] [-p] [-s]"
+	exit 85
 }
 
 # main
 if test $# -eq 0; then
-  usage
+	usage
 fi
 
 while getopts ":ce:lmnops" Option; do
-  case $Option in
-  c) rm `du -a | awk '{ print $2 }' | grep \\.html$`
-    ;;
-  e) $EDITOR $DIR/posts/`date '+%Y-%m-%d'`-"$OPTARG".md
-    ;;
-  l) $RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
-       $RUSER@$RHOST:$DIR/$USER/ $DIR/$USER/
-    ;;
-  m) $RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
-       $DIR/$USER/ $RUSER@$RHOST:$DIR/$USER/
-    ;;
-  n) $RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
-       $RUSER@$RHOST:$DIR/ $DIR/
-    ;;
-  o) $RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
-       $DIR/ $RUSER@$RHOST:$DIR/
-    ;;
-  p) URL=$POSTURL REVERSE="-r" make_site
-    ;;
-  s) URL=$FULLURL make_site 
-    ;;
-  *) usage
-    ;;
-  esac
+	case $Option in
+	c)
+		rm `du -a | awk '{ print $2 }' | grep \\.html$`
+		;;
+	e)
+		$EDITOR $DIR/posts/`date '+%Y-%m-%d'`-"$OPTARG".md
+		;;
+	l)
+		$RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
+			$RUSER@$RHOST:$DIR/$USER/ $DIR/$USER/
+		;;
+	m)
+		$RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
+			$DIR/$USER/ $RUSER@$RHOST:$DIR/$USER/
+		;;
+	n)
+		$RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
+			$RUSER@$RHOST:$DIR/ $DIR/
+		;;
+	o)
+		$RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
+			$DIR/ $RUSER@$RHOST:$DIR/
+		;;
+	p)
+		URL=$POSTURL REVERSE="-r" make_site
+		;;
+	s)
+		URL=$FULLURL make_site 
+		;;
+	*)
+		usage
+		;;
+	esac
 done
 
 shift $(($OPTIND - 1))
