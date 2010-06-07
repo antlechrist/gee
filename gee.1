@@ -1,84 +1,96 @@
-.Dd $Mdocdate: June 07 2010
-.Dt GEE 1 gee\-VERSION
-.Os
-.Sh NAME
-.Nm gee
-.Nd site generation tool
-.Sh SYNOPSIS
-.Nm gee
-.Op Fl c
-.Op Fl e
-.Ar filename
-.Op Fl l
-.Op Fl m
-.Op Fl n
-.Op Fl o
-.Op Fl p
-.Op Fl s
-.Sh DESCRIPTION
-.Nm
-is a site generation tool.  It can generate a site or ``weblog'',
-clean generated files, and push and pull a local directory to
-a remote server.
-.Nm
+.TH GEE 1 gee\-VERSION
+.SH NAME
+gee \- site generation tool
+.SH SYNOPSIS
+.B gee
+.RB [-c]
+.RB [-e\ title]
+.RB [-l]
+.RB [-m]
+.RB [-n]
+.RB [-o]
+.RB [-p]
+.RB [-s]
+.SH DESCRIPTION
+.I gee
+is a site generation tool.
+It can generate a site or ``weblog'',
+clean generated files,
+and push and pull a local directory to a remote server.
+.I gee
 relies on many normal Unix tools.
-.Bl -tag -width Ds
-.It Fl c
+.SH OPTIONS
+.TP
+.B \-c
 Clean generated html files.
-.It Fl e
+.TP
+.B \-e title
 Compose a post with your favorite editor.
-.It Fl l
+.TP
+.B \-l
 Pull $USER's subdomain.
-.It Fl m
+.TP
+.B \-m
 Push $USER's subdomain.
-.It Fl n
+.TP
+.B \-n
 Pull full site.
-.It Fl o
+.TP
+.B \-o
 Push full site.
-.It Fl p
+.TP
+.B \-p
 Generate 'posts' site.
-.It Fl s
+.TP
+.B \-s
 Generate 'full' site.
-.It *
+.TP
+.B *
 Display usage.
-.El
-.Sh ENVIRONMENT
-.Ev USER
+.SH ENVIRONMENT
+.B USER
 Name of subdomain for the
-.Fl l
+.B \-l
 and
-.Fl m
+.B \-m
 options.
-.Sh FILES
-.Ar ~/.geerc
+.SH FILES
+.I
+~/.geerc
 Specifies the variables in use.
-.Sh EXAMPLES
+.SH EXAMPLES
+.TP
+.L
 Make sure you're up to date:
-.Pp
-.D1 $ gee \-n
-.Pp
+$ gee \-n
+.TP
+.L
 After editing the docs directory, push to remote:
-.Pp
-.D1 $ gee \-m
-.Pp
+$ gee \-m
+.TP
+.L
 Write a new post:
-.Pp
-.D1 $ gee \-e the-best-piece-of-writing-ever
-.Sh AUTHOR
-Andrew Antle
-.Sh BUGS
+$ gee \-e the-best-piece-of-writing-ever
+.SH BUGS
 Ha! Surely you must be joking.
 Write me a mail, or post it on the github wikka.
-.Sh SEE ALSO
-.Xr awk 1 ,
-.Xr cat 1 ,
-.Xr echo 1 ,
-.Xr grep 1 ,
-.Xr ls 1 ,
-.Xr markdown 1 ,
-.Xr rsync 1 ,
-.Xr sed 1 ,
-.Xr sort 1 ,
-.Xr ssh 1 ,
-.Xr tr 1 ,
-.Xr vi 1
+.SH SEE ALSO
+.BR awk (1),
+.BR cat (1),
+.BR echo (1),
+.BR grep (1),
+.BR ls (1),
+.BR markdown (1),
+.BR rsync (1),
+.BR sed (1),
+.BR sort (1),
+.BR ssh (1),
+.BR tr (1),
+.BR vi (1),
+.BR markdown (7),
+.P
+.I
+http://github.com/antlechrist/gee
+,
+.I
+http://hg.suckless.org/genosite

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/ash
 
 . ~/.geerc
 
@@ -10,9 +10,11 @@ menu() {
 			base=`echo $i | sed "s/.\$EXT$//"`
 			cleanbase=`echo $base | sed 's/_/ /g'`
 			if test "x$base" = "x$2"; then
-				echo "<li class='current'><a href=\"$base.html\">$cleanbase</a></li>"
+				echo "\
+<li class='current'><a href=\"$base.html\">$cleanbase</a></li>"
 			else
-				echo "<li><a href=\"$base.html\">$cleanbase</a></li>"
+				echo "\
+<li><a href=\"$base.html\">$cleanbase</a></li>"
 			fi
 			cur=1
 			;;
@@ -60,7 +62,8 @@ Powered by <a href="http://hg.suckless.org/genosite">genosite</a>,
 and <a href="http://www.vim.org/">vim</a><br />
 <a href="$2.$EXT">Page source</a> |
 <a href="mailto:andrew at antlechrist dot org">Contact</a> |
-<a href="http://antlechrist.org/">61:6e:74:6c:65:63:68:72:69:73:74:2e:6f:72:67</a>
+<a href="http://antlechrist.org/">
+61:6e:74:6c:65:63:68:72:69:73:74:2e:6f:72:67</a>
 </div>
 <div class="right">
 Last modified: $mtime<br />
