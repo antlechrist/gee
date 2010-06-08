@@ -1,96 +1,112 @@
-.TH GEE 1 gee\-VERSION
-.SH NAME
-gee \- site generation tool
-.SH SYNOPSIS
-.B gee
-.RB [-c]
-.RB [-e\ title]
-.RB [-l]
-.RB [-m]
-.RB [-n]
-.RB [-o]
-.RB [-p]
-.RB [-s]
-.SH DESCRIPTION
-.I gee
+.Dd $Mdocdate: June 07, 2010 $
+.Dt GEE 1
+.Os
+.
+.Sh NAME
+.Nm gee
+.Nd site generation tool
+.
+.Sh SYNOPSIS
+.Nm gee
+.Op Fl c
+.Op Fl e
+.Ar title
+.Op Fl l
+.Op Fl m
+.Op Fl n
+.Op Fl o
+.Op Fl p
+.Op Fl s
+.
+.Sh DESCRIPTION
+.Nm gee
 is a site generation tool.
 It can generate a site or ``weblog'',
 clean generated files,
 and push and pull a local directory to a remote server.
-.I gee
+.Nm gee
 relies on many normal Unix tools.
-.SH OPTIONS
-.TP
-.B \-c
+.Bl -tag -width Ds
+.It Fl c
 Clean generated html files.
-.TP
-.B \-e title
+.It Fl e
 Compose a post with your favorite editor.
-.TP
-.B \-l
+.It Fl l
 Pull $USER's subdomain.
-.TP
-.B \-m
+.It Fl m
 Push $USER's subdomain.
-.TP
-.B \-n
+.It Fl n
 Pull full site.
-.TP
-.B \-o
+.It Fl o
 Push full site.
-.TP
-.B \-p
+.It Fl p
 Generate 'posts' site.
-.TP
-.B \-s
+.It Fl s
 Generate 'full' site.
-.TP
-.B *
+.It *
 Display usage.
-.SH ENVIRONMENT
-.B USER
+.El
+.
+.Sh ENVIRONMENT
+.Ev USER
 Name of subdomain for the
-.B \-l
+.Fl l
 and
-.B \-m
+.Fl m
 options.
-.SH FILES
-.I
-~/.geerc
+.
+.Sh FILES
+.Bl -tag -width Ds
+.It Pa ~/.geerc
 Specifies the variables in use.
-.SH EXAMPLES
-.TP
-.L
+.El
+.
+.Sh EXAMPLES
 Make sure you're up to date:
-$ gee \-n
-.TP
-.L
-After editing the docs directory, push to remote:
-$ gee \-m
-.TP
-.L
+.Pp
+.Dl $ gee -n
+.Pp
+After editing in the
+.Pa docs/
+directory, push to remote:
+.Pp
+.Dl $ gee -m
+.Pp
 Write a new post:
-$ gee \-e the-best-piece-of-writing-ever
-.SH BUGS
-Ha! Surely you must be joking.
+.Pp
+.D1 $ gee -e Ar the-best-piece-of-writing-ever
+.
+.Sh BUGS
+Ha!  Surely you must be joking.
 Write me a mail, or post it on the github wikka.
-.SH SEE ALSO
-.BR awk (1),
-.BR cat (1),
-.BR echo (1),
-.BR grep (1),
-.BR ls (1),
-.BR markdown (1),
-.BR rsync (1),
-.BR sed (1),
-.BR sort (1),
-.BR ssh (1),
-.BR tr (1),
-.BR vi (1),
-.BR markdown (7),
-.P
-.I
-http://github.com/antlechrist/gee
-,
-.I
-http://hg.suckless.org/genosite
+.Pp
+$mtime is very system specific.
+It depends on which fields print where.
+The default works fine on Slackware 13.1.
+.Pp
+Get rid of all aberrant hard-coded paths, you ingrate!
+Such as ``posts’’ in
+$EDITOR $DIR/posts/`date '+%Y-%m-%d'`-"$OPTARG".md
+.Pp
+Abstract from specific sync method.
+Should be pluggable like $FMT.
+.Pp
+Improve the freaking documentation,
+especially for
+.Pa ~/.geerc .
+.Pp
+DONE Move back to mdoc from OpenBSD for manpage.
+.
+.Sh SEE ALSO
+.Xr awk 1 ,
+.Xr cat 1 ,
+.Xr echo 1 ,
+.Xr grep 1 ,
+.Xr ls 1 ,
+.Xr markdown 1 ,
+.Xr rsync 1 ,
+.Xr sed 1 ,
+.Xr sort 1 ,
+.Xr ssh 1 ,
+.Xr tr 1 ,
+.Xr vi 1
