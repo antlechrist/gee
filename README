@@ -1,9 +1,40 @@
-Site generation tool based on genosite.  Inspired by working with sw, werc,
-and vee.
+GEE - site generation tool
+==========================
 
-* genosite:  <http://hg.suckless.org/genosite>
-* sw:        <http://nibble.develsec.org/sw.cgi/projects/sw.md>
-* vee:       <http://www.0x743.com/vee/>
-* werc:      <http://werc.cat-v.org/>
+gee is a site generation tool based on genosite.  Inspired by working with
+sw, werc, and vee.
 
-http://en.wikipedia.org/wiki/Atom_(standard)
+* [genosite](http://hg.suckless.org/genosite)
+* [sw](http://nibble.develsec.org/sw.cgi/projects/sw.md)
+* [vee](http://www.0x743.com/vee/)
+* [werc](http://werc.cat-v.org/)
+
+* <http://en.wikipedia.org/wiki/Atom_(standard)>
+
+Recommendations
+---------------
+
+* [awk](http://www.cs.princeton.edu/~bwk/btl.mirror/)
+  * the One True Awk.
+* [discount](http://www.pell.portland.or.us/~orc/Code/discount)
+  * for markdown formatting.
+* [mdocml](http://mdocml.bsd.lv/)
+  * for displaying manpages.
+* [rsync](http://rsync.samba.org/)
+  * for synchronizing directories.
+
+Installation
+------------
+
+Edit config.mk to match your local setup (gee is installed into
+the `/usr/local` namespace by default.
+
+Afterwards, enter the following command to install gee (if
+necessary as root):
+
+    make install
+
+Configuration
+-------------
+
+Copy `geerc.def` to `~/.geerc` and fill in your specific details.
