@@ -1,4 +1,4 @@
-.Dd $Mdocdate: June 07, 2010 $
+.Dd $Mdocdate: June 07 2010 $
 .Dt GEE 1
 .Os
 .
@@ -9,8 +9,7 @@
 .Sh SYNOPSIS
 .Nm gee
 .Op Fl c
-.Op Fl e
-.Ar title
+.Op Fl e Ar title
 .Op Fl l
 .Op Fl m
 .Op Fl n
@@ -74,28 +73,7 @@ directory, push to remote:
 .Pp
 Write a new post:
 .Pp
-.D1 $ gee -e Ar the-best-piece-of-writing-ever
-.
-.Sh BUGS
-Ha!  Surely you must be joking.
-Write me a mail, or post it on the github wikka.
-.Pp
-$mtime is very system specific.
-It depends on which fields print where.
-The default works fine on Slackware 13.1.
-.Pp
-Get rid of all aberrant hard-coded paths, you ingrate!
-Such as ``posts’’ in
-$EDITOR $DIR/posts/`date '+%Y-%m-%d'`-"$OPTARG".md
-.Pp
-Abstract from specific sync method.
-Should be pluggable like $FMT.
-.Pp
-Improve the freaking documentation,
-especially for
-.Pa ~/.geerc .
-.Pp
-DONE Move back to mdoc from OpenBSD for manpage.
+.Dl $ gee -e Ar the-best-piece-of-writing-ever
 .
 .Sh SEE ALSO
 .Xr awk 1 ,
@@ -110,3 +88,31 @@ DONE Move back to mdoc from OpenBSD for manpage.
 .Xr ssh 1 ,
 .Xr tr 1 ,
 .Xr vi 1
+.Pp
+.Lk http://github.com/antlechrist/gee
+.Pp
+.Lk http://hg.suckless.org/genosite
+.Sh AUTHOR
+.An Andrew Antle
+.Aq andrew at antlechrist dot org
+.Sh BUGS
+Ha!  Surely you must be joking.
+Write me a mail, or post it on the github wikka.
+.Pp
+$mtime is very system specific.
+It depends on which fields print where.
+The default works fine on Slackware 13.1.
+.Pp
+Get rid of all aberrant hard-coded paths, you ingrate!
+Such as
+.Pa posts
+in
+.Pp
+.Dl $EDITOR $DIR/posts/`date '+%Y-%m-%d'`-"$OPTARG".md
+.Pp
+Abstract from specific sync method.
+Should be pluggable like $FMT.
+.Pp
+Improve the freaking documentation,
+especially for
+.Pa ~/.geerc .
