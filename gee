@@ -108,7 +108,7 @@ make_site() {
 }
 
 usage() {
-	echo "usage: gee [-c] [-e] filename [-l] [-m] [-n] [-o] [-p] [-s]"
+	echo "usage: gee [-c] [-e title] [-l] [-m] [-n] [-o] [-p] [-s]"
 	exit 85
 }
 
