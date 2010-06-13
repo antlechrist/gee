@@ -108,7 +108,7 @@ END
 	cat <<END
 <div id="main-copy">
 END
-	cat $1$2.$EXT | tr -d '\r' | $FMT
+	cat $1$2.$EXT | $FMT
 	cat <<END
 </div>
 <div id="footer">

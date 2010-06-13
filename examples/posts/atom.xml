@@ -3,7 +3,7 @@
 <title>posts.antlechrist.org</title>
 <link href="http://posts.antlechrist.org/atom.xml" rel="self"/>
 <link href="http://posts.antlechrist.org/"/>
-<updated>2010-06-12T23:50:54-04:00</updated>
+<updated>2010-06-13T00:43:29-04:00</updated>
 <id>http://posts.antlechrist.org/</id>
 <author>
 <name>Andrew Antle</name>
@@ -12,7 +12,7 @@
 <title>SCIENCE > FAITH</title>
 <link href="/2010-05-25-science-faith-repost.html"/>
 <updated>2010-05-25T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-05-25-science-faith-repost.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-05-25-science-faith-repost.html</id>
 <content type="html">
 
 &lt;p&gt;&lt;img src=&quot;http://pablo.enlapc.com/wp-content/uploads/2010/05/fe-y-ciencia.jpg&quot;
@@ -29,7 +29,7 @@ src=&quot;http://upload.wikimedia.org/wikipedia/en/b/b8/Faith_No_More_-_The_Very
 <title>IN ROTATION</title>
 <link href="/2010-05-23-rotation.html"/>
 <updated>2010-05-23T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-05-23-rotation.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-05-23-rotation.html</id>
 <content type="html">
 
 &lt;ul&gt;
@@ -46,7 +46,7 @@ src=&quot;http://upload.wikimedia.org/wikipedia/en/b/b8/Faith_No_More_-_The_Very
 <title>INFRASTRUCTURES (REPOST XKCD.COM)</title>
 <link href="/2010-05-21-infrastructures-repost.html"/>
 <updated>2010-05-21T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-05-21-infrastructures-repost.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-05-21-infrastructures-repost.html</id>
 <content type="html">
 
 &lt;p&gt;
@@ -64,7 +64,7 @@ alt=&quot;Infrastructures&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 <title>NILE TOUR</title>
 <link href="/2010-05-14-nile-tour.html"/>
 <updated>2010-05-14T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-05-14-nile-tour.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-05-14-nile-tour.html</id>
 <content type="html">
 
 &lt;p&gt;The &lt;a href=&quot;http://www.nile-catacombs.net/&quot;&gt;&amp;ldquo;Those Whom the Gods Detest Tour II&amp;rdquo;&lt;/a&gt; is, per usual, not coming to
@@ -89,7 +89,7 @@ Horse the Band is playing Peabody&amp;rsquo;s tomorrow. AAAGGGHHH!&lt;/em&gt;&lt
 <title>CANADA</title>
 <link href="/2010-05-12-canada.html"/>
 <updated>2010-05-12T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-05-12-canada.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-05-12-canada.html</id>
 <content type="html">
 
 &lt;h2&gt;IF SOMEONE SAYS &amp;lsquo;ARE YOU OKAY&amp;rsquo; YOU SAY?&lt;/h2&gt;
@@ -212,7 +212,7 @@ into false dreams of endless riches &amp;ndash; Red Sparowes&lt;/p&gt;
 <title>GENOSITE UPDATE</title>
 <link href="/2010-03-11-genosite-update.html"/>
 <updated>2010-03-11T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-03-11-genosite-update.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-03-11-genosite-update.html</id>
 <content type="html">
 
 &lt;p&gt;I&amp;rsquo;ve made some modification to the scripts. Check it out.&lt;/p&gt;
@@ -394,7 +394,7 @@ itself. Feel free to use them as you see fit.&lt;/p&gt;
 <title>ANIMAL "RIGHTS" AND THE NEW MAN HATERS</title>
 <link href="/2010-03-10-animal-rights-new-man-haters-locke.html"/>
 <updated>2010-03-10T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-03-10-animal-rights-new-man-haters-locke.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-03-10-animal-rights-new-man-haters-locke.html</id>
 <content type="html">
 
 &lt;blockquote&gt;&lt;p&gt;To claim that man&amp;rsquo;s use of animals is immoral is to claim that
@@ -483,7 +483,7 @@ and the pursuit of his own happiness.&lt;/p&gt;
 <title>GENOSITE, QUARK, DISCOUNT AND RSYNC</title>
 <link href="/2010-02-24-genosite-quark-discount-rsync.html"/>
 <updated>2010-02-24T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-02-24-genosite-quark-discount-rsync.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-02-24-genosite-quark-discount-rsync.html</id>
 <content type="html">
 
 &lt;p&gt;I&amp;rsquo;ve been looking for different solutions to my web goings-on, including
@@ -671,7 +671,7 @@ $RSYNC -avz --delete -e &quot;$SSH -p &amp;lt;port&amp;gt;&quot; $LPATH $RUSER@$
 <title>Tascam US-428 on Linux</title>
 <link href="/2010-02-20-tascam-us-428-linux.html"/>
 <updated>2010-02-20T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-02-20-tascam-us-428-linux.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-02-20-tascam-us-428-linux.html</id>
 <content type="html">
 
 &lt;ul&gt;
@@ -725,7 +725,7 @@ $RSYNC -avz --delete -e &quot;$SSH -p &amp;lt;port&amp;gt;&quot; $LPATH $RUSER@$
 <title>bsdtar and Compression Stats</title>
 <link href="/2010-02-17-bsdtar-compression-stats.html"/>
 <updated>2010-02-17T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-02-17-bsdtar-compression-stats.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-02-17-bsdtar-compression-stats.html</id>
 <content type="html">
 
 &lt;pre&gt;&lt;code&gt;[andrew@lloyd ~]$ time (bsdtar cf docs.tar docs &amp;amp;&amp;amp; gzip docs.tar)
@@ -759,7 +759,7 @@ $RSYNC -avz --delete -e &quot;$SSH -p &amp;lt;port&amp;gt;&quot; $LPATH $RUSER@$
 <title>Screenshots</title>
 <link href="/2010-02-04-screenshots.html"/>
 <updated>2010-02-04T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-02-04-screenshots.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-02-04-screenshots.html</id>
 <content type="html">
 
 &lt;p&gt;
@@ -775,7 +775,7 @@ $RSYNC -avz --delete -e &quot;$SSH -p &amp;lt;port&amp;gt;&quot; $LPATH $RUSER@$
 <title>Bookmarking for uzbl</title>
 <link href="/2010-02-03-bookmarking-uzbl.html"/>
 <updated>2010-02-03T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-02-03-bookmarking-uzbl.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-02-03-bookmarking-uzbl.html</id>
 <content type="html">
 
 &lt;p&gt;I edited the existing &lt;code&gt;insert_bookmark.sh&lt;/code&gt; for &lt;a href=&quot;http://uzbl.org&quot;&gt;uzbl&lt;/a&gt;
@@ -811,7 +811,7 @@ solution and the one included with uzbl. Feedback would be cool.&lt;/p&gt;
 <title>Bookmarking for surf, redux</title>
 <link href="/2010-02-02-bookmarking-surf-redux.html"/>
 <updated>2010-02-02T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-02-02-bookmarking-surf-redux.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-02-02-bookmarking-surf-redux.html</id>
 <content type="html">
 
 &lt;p&gt;Following up from the previous post on surf bookmarking:&lt;/p&gt;
@@ -831,7 +831,7 @@ as well.&lt;/p&gt;
 <title>Bookmarking for surf</title>
 <link href="/2010-02-01-bookmarking-surf.html"/>
 <updated>2010-02-01T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-02-01-bookmarking-surf.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-02-01-bookmarking-surf.html</id>
 <content type="html">
 
 &lt;pre&gt;&lt;code&gt;hg clone http://hg.thelloyd.net/surf-andy-hg
@@ -844,7 +844,7 @@ as well.&lt;/p&gt;
 <title>webcast.berkeley.edu</title>
 <link href="/2010-01-31-webcast-berkeley-edu.html"/>
 <updated>2010-01-31T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-01-31-webcast-berkeley-edu.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-01-31-webcast-berkeley-edu.html</id>
 <content type="html">
 
 &lt;p&gt;&lt;a href=&quot;http://webcast.berkeley.edu/&quot;&gt;http://webcast.berkeley.edu/&lt;/a&gt;&lt;/p&gt;
@@ -856,7 +856,7 @@ as well.&lt;/p&gt;
 <title>In Rotation </title>
 <link href="/2010-01-30-rotation.html"/>
 <updated>2010-01-30T00:00:00-04:00</updated>
-<id>tag:posts.antlechrist.org,2010-06-12:/2010-01-30-rotation.html</id>
+<id>tag:posts.antlechrist.org,2010-06-13:/2010-01-30-rotation.html</id>
 <content type="html">
 
 &lt;ul&gt;
