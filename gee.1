@@ -11,8 +11,6 @@
 .Op Fl c
 .Op Fl e Ar title
 .Op Fl f
-.Op Fl l
-.Op Fl m
 .Op Fl n
 .Op Fl o
 .Op Fl p
@@ -33,10 +31,6 @@ Clean generated html files.
 Compose a post entitled 'title' with your favorite editor.
 .It Fl f
 Generate an atom feed.
-.It Fl l
-Pull $USER's subdomain.
-.It Fl m
-Push $USER's subdomain.
 .It Fl n
 Pull full site.
 .It Fl o
@@ -48,14 +42,6 @@ Generate 'full' site.
 .It *
 Display usage.
 .El
-.
-.Sh ENVIRONMENT
-.Ev USER
-Name of subdomain for the
-.Fl l
-and
-.Fl m
-options.
 .
 .Sh FILES
 .Bl -tag -width Ds
@@ -72,7 +58,7 @@ After editing in the
 .Pa docs/
 directory, push to remote:
 .Pp
-.Dl $ gee -m
+.Dl $ gee -o
 .Pp
 Write a new post:
 .Pp
@@ -119,7 +105,3 @@ in
 .Pp
 Abstract from specific sync method.
 Should be pluggable like $FMT.
-.Pp
-Improve the freaking documentation,
-especially for
-.Pa ~/.geerc .

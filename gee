@@ -2,10 +2,9 @@
 
 . ~/.geerc
 
-# functions
 entry() {
 	for i in `ls -F *.$EXT | grep -v index.$EXT | sort -r`; do
-		post=`echo $i | sed 's/md$/html/'`
+		post=`echo $i | sed "s/.\$EXT$/.html/"`
 		title=`cat $i | sed 1q`
 		updated="`echo $i | cut -c -10`T00:00:00-04:00"
 		cat <<END
@@ -144,7 +143,7 @@ process() {
 			;;
 		*/)
 			process "$1$i" "$2</a><a href=\"$PREFIX`echo $1 | \
-			sed 's/.\///'`$i\">$i" $3$i
+				sed 's/.\///'`$i\">$i" $3$i
 			;;
 		*)
 			;;
@@ -153,8 +152,7 @@ process() {
 }
 
 usage() {
-	echo "usage: gee [-c] [-e title] [-f] [-l] [-m] [-n] [-o] [-p] [-s]"
-	exit 85
+	echo "usage: gee [-c] [-e title] [-f] [-n] [-o] [-p] [-s]" && exit 1
 }
 
 # main
@@ -162,8 +160,8 @@ if test $# -eq 0; then
 	usage
 fi
 
-while getopts ":ce:flmnops" Option; do
-	case $Option in
+while getopts ":ce:fnops" OPT; do
+	case $OPT in
 	c)
 		rm `du -a | awk '{ print $2 }' | grep \\.html$`
 		;;
@@ -172,14 +170,6 @@ while getopts ":ce:flmnops" Option; do
 		;;
 	f)
 		feed > atom.xml
-		;;
-	l)
-		$RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
-			$RUSER@$RHOST:$DIR/$USER/ $DIR/$USER/
-		;;
-	m)
-		$RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
-			$DIR/$USER/ $RUSER@$RHOST:$DIR/$USER/
 		;;
 	n)
 		$RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
