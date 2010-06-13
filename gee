@@ -3,6 +3,54 @@
 . ~/.geerc
 
 # functions
+entry() {
+	for i in `ls -F *.$EXT | grep -v index.$EXT | sort -r`; do
+		post=`echo $i | sed 's/md$/html/'`
+		title=`cat $i | sed 1q`
+		updated="`echo $i | cut -c -10`T00:00:00-04:00"
+		cat <<END
+<entry>
+<title>$title</title>
+<link href="/$post"/>
+<updated>$updated</updated>
+<id>tag:$POSTURL,`date +%Y-%m-%d`:/$post</id>
+<content type="html">
+END
+		cat $i | $FMT -f cdata
+		cat <<END
+</content>
+</entry>
+END
+	done
+}
+
+feed() {
+	updated=`date --rfc-3339=seconds | sed 's/ /T/'`
+	cat <<END
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>$POSTURL</title>
+<link href="http://$POSTURL/atom.xml" rel="self"/>
+<link href="http://$POSTURL/"/>
+<updated>$updated</updated>
+<id>http://$POSTURL/</id>
+<author>
+<name>$REALNAME</name>
+</author>
+END
+	entry
+	cat <<END
+</feed>
+END
+}
+
+make_site() {
+	if test $1; then
+		cd $1
+	fi
+	process "./" "<a href=\"/\">$URL/" /
+}
+
 menu() {
 	for i in `ls -F $1 | grep -v index.$EXT | sort $REVERSE`; do
 		case $i in
@@ -100,15 +148,8 @@ process() {
 	done
 }
 
-make_site() {
-	if test $1; then
-		cd $1
-	fi
-	process "./" "<a href=\"/\">$URL/" /
-}
-
 usage() {
-	echo "usage: gee [-c] [-e title] [-l] [-m] [-n] [-o] [-p] [-s]"
+	echo "usage: gee [-c] [-e title] [-f] [-l] [-m] [-n] [-o] [-p] [-s]"
 	exit 85
 }
 
@@ -117,13 +158,16 @@ if test $# -eq 0; then
 	usage
 fi
 
-while getopts ":ce:lmnops" Option; do
+while getopts ":ce:flmnops" Option; do
 	case $Option in
 	c)
 		rm `du -a | awk '{ print $2 }' | grep \\.html$`
 		;;
 	e)
 		$EDITOR $DIR/posts/`date '+%Y-%m-%d'`-"$OPTARG".md
+		;;
+	f)
+		feed > $DIR/posts/atom.xml
 		;;
 	l)
 		$RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
