@@ -16,7 +16,7 @@ entry() {
 <id>tag:$POSTURL,`date +%Y-%m-%d`:/$post</id>
 <content type="html">
 END
-		cat $i | $FMT -f cdata
+		cat $i | $FMT $XMLESCOPTS | sed 1d
 		cat <<END
 </content>
 </entry>
@@ -167,7 +167,7 @@ while getopts ":ce:flmnops" Option; do
 		$EDITOR $DIR/posts/`date '+%Y-%m-%d'`-"$OPTARG".md
 		;;
 	f)
-		feed > $DIR/posts/atom.xml
+		feed > atom.xml
 		;;
 	l)
 		$RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
