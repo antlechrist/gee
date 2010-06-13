@@ -1,14 +1,43 @@
+# gee configuration file.
+
+# Filename extension for source files.
 EXT=md
+
+# Markdown implementation of choice, i.e. Markdown.pl, md2html.awk, etc.
 FMT=markdown
+
+# Can the above markdown escape HTML stuff?  Put it here.  Used in creation
+# of atom feed.
 XMLESCOPTS=""
+
 PREFIX=/
 FULLURL=
 POSTURL=
-RSYNC=rsync
-SSH=ssh
+
+# Example:  RSYNC=/usr/bin/rsync .
+RSYNC=
+
+# Example:  SSH=/usr/bin/ssh .
+SSH=
+
+# Connect to a specific port on the remote server, if necessary.
 PORT=
+
+# Full path to document root.
+# Example:  /home/$RUSER/public_html .
 DIR=
-REALNAME=
+
+# Real name.  Not required.  Used in <author> for atom feed.
+REALNAME=""
+
+# Remote host.
 RHOST=
+
+# Remote user.
+# Recommendation:  Recreate the remote directory structure locally so they
+#                  mirror each other.  This simplifies things a lot.
 RUSER=
+
+# Directories to exclude during sync.
+# Example:  EXCLUDE="please-ignore/this-dir" .
 EXCLUDE=""
