@@ -10,6 +10,7 @@
 .Nm gee
 .Op Fl c
 .Op Fl e Ar title
+.Op Fl f
 .Op Fl l
 .Op Fl m
 .Op Fl n
@@ -28,8 +29,10 @@ relies on many normal Unix tools.
 .Bl -tag -width Ds
 .It Fl c
 Clean generated html files.
-.It Fl e
-Compose a post with your favorite editor.
+.It Fl e Ar title
+Compose a post entitled 'title' with your favorite editor.
+.It Fl f
+Generate an atom feed.
 .It Fl l
 Pull $USER's subdomain.
 .It Fl m
@@ -92,9 +95,11 @@ Write a new post:
 .Lk http://github.com/antlechrist/gee
 .Pp
 .Lk http://hg.suckless.org/genosite
+.
 .Sh AUTHOR
 .An Andrew Antle
 .Aq andrew at antlechrist dot org
+.
 .Sh BUGS
 Ha!  Surely you must be joking.
 Write me a mail, or post it on the github wikka.
@@ -102,6 +107,8 @@ Write me a mail, or post it on the github wikka.
 $mtime is very system specific.
 It depends on which fields print where.
 The default works fine on Slackware 13.1.
+.br
+2010-06-12: Fixed to work with Arch.
 .Pp
 Get rid of all aberrant hard-coded paths, you ingrate!
 Such as
