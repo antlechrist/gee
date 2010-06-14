@@ -9,7 +9,16 @@ sw, werc, and vee.
 * [vee](http://www.0x743.com/vee/)
 * [werc](http://werc.cat-v.org/)
 
-* <http://en.wikipedia.org/wiki/Atom_(standard)>
+The main development site is
+
+    http://github.com/antlechrist/gee
+
+but there is a Mercurial repo at
+
+    http://bitbucket.org/antlechrist/gee
+
+if you're into that kind of thing.  I really dislike bitbucket though, so it
+isn't _as_ up to date.
 
 Recommendations
 ---------------
