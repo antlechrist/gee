@@ -12,7 +12,7 @@ entry() {
 <title>$title</title>
 <link href="/$post"/>
 <updated>$updated</updated>
-<id>tag:$POSTURL,`date +%Y-%m-%d`:/$post</id>
+<id>tag:$POSTURL,$updated:/$post</id>
 <content type="html">
 END
 		cat $i | $FMT $XMLESCOPTS | sed 1d
@@ -172,11 +172,11 @@ while getopts ":ce:fnops" OPT; do
 		feed > atom.xml
 		;;
 	n)
-		$RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
+		$RSYNC -az --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
 			$RUSER@$RHOST:$DIR/ $DIR/
 		;;
 	o)
-		$RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
+		$RSYNC -az --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
 			$DIR/ $RUSER@$RHOST:$DIR/
 		;;
 	p)
@@ -190,7 +190,6 @@ while getopts ":ce:fnops" OPT; do
 		;;
 	esac
 done
-
 shift $(($OPTIND - 1))
 
 exit $?
