@@ -6,8 +6,8 @@ EXT=md
 # Markdown implementation of choice, i.e. Markdown.pl, md2html.awk, etc.
 FMT=markdown
 
-# Can the above markdown escape HTML stuff?  Put it here.  Used in creation
-# of atom feed.
+# Can the above markdown escape HTML stuff? Put it here.
+# Used in creation of atom feed.
 XMLESCOPTS=""
 
 PREFIX=/
@@ -27,7 +27,7 @@ PORT=
 # Example:  /home/$RUSER/public_html .
 DIR=
 
-# Real name.  Not required.  Used in <author> for atom feed.
+# Real name. Not required. Used in <author> for atom feed.
 REALNAME=""
 
 # Remote host.
@@ -35,7 +35,7 @@ RHOST=
 
 # Remote user.
 # Recommendation:  Recreate the remote directory structure locally so they
-#                  mirror each other.  This simplifies things a lot.
+#                  mirror each other. This simplifies things a lot.
 RUSER=
 
 # Directories to exclude during sync.
