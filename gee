@@ -77,11 +77,10 @@ END
 }
 
 page() {
-	test `uname -r | grep ARCH` && list_iso='--time-style=long-iso'
-	mtime=`ls -l $list_iso $1$2.$EXT | awk '{ print $6" at "$7 }'`
+	mtime=`ls -l $1$2.$EXT | awk '{ print $6" at "$7 }'`
 	title="$URL`echo $4 | sed 's/.html//'`"
 	cat <<END
-<!doctype html>
+<!DOCTYPE html>
 <head>
 <title>$title</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
