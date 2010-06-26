@@ -191,5 +191,4 @@ while getopts ":ce:fnops" OPT; do
 	esac
 done
 shift $(($OPTIND - 1))
-
 exit $?
