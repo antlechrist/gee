@@ -133,6 +133,7 @@ process() {
 	for i in `ls -F $1`; do
 		case $i in
 		*.$EXT)
+			echo "processing $1$i"
 			base=`echo $i | sed "s/.\$EXT$//"`
 			if test x$base = xindex; then
 				title=$3
@@ -172,11 +173,11 @@ while getopts ":ce:fnops" OPT; do
 		feed > atom.xml
 		;;
 	n)
-		$RSYNC -az --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
+		$RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
 			$RUSER@$RHOST:$DIR/ $DIR/
 		;;
 	o)
-		$RSYNC -az --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
+		$RSYNC -avz --delete --exclude=$EXCLUDE -e "$SSH -p $PORT" \
 			$DIR/ $RUSER@$RHOST:$DIR/
 		;;
 	p)
