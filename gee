@@ -113,13 +113,14 @@ END
 <div class="left">
 Powered by <a href="http://github.com/antlechrist/gee">gee</a><br />
 <a href="$2.$EXT">Page source</a> |
-<a href="mailto:andrew at antlechrist dot org">Contact</a> |
-<a href="http://antlechrist.org/">
-61:6e:74:6c:65:63:68:72:69:73:74:2e:6f:72:67</a>
+<a href="http://antlechrist.org/">Main</a>
 </div>
 <div class="right">
 Last modified: $mtime<br />
-<a href="/LICENSE">© 2009-2010 Andrew Antle</a>
+<a href="/LICENSE">© 2009-2010</a>
+<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#58;&#97;&#x6e;&#100;
+&#x72;&#101;&#119;&#x40;&#x61;&#110;&#116;&#x6c;&#101;&#x63;&#104;
+&#x72;&#105;&#115;&#116;&#x2e;&#111;&#114;&#103;">Andrew Antle</a>
 </div>
 </div>
 </div>
