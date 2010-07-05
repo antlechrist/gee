@@ -71,9 +71,9 @@ menu() {
 		esac
 	done
 	cat <<END
-   </ul>
-  </nav>
- </header>
+</ul>
+</nav>
+</header>
 END
 }
 
@@ -84,47 +84,43 @@ page() {
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <title>$title</title>
- <meta charset="utf-8" />
+<title>$title</title>
+<meta charset="utf-8" />
 END
 	if test $REVERSE; then
 		cat <<END
- <link href="/atom.xml" rel="alternate" type="application/atom+xml" />
+<link href="/atom.xml" rel="alternate" type="application/atom+xml" />
 END
 	fi
 	cat <<END
- <link href="/favicon.png" rel="shortcut icon" />
- <link href="/style.css" rel="stylesheet" />
+<link href="/favicon.png" rel="shortcut icon" />
+<link href="/style.css" rel="stylesheet" />
 </head>
 <body>
- <header>
-  <hgroup>
-   <h1>$3</a></h1>
-  </hgroup>
-  <nav>
-   <ul>
+<header>
+<hgroup><h1>$3</a></h1></hgroup>
+<nav>
+<ul>
 END
 	menu $1 $2
 	cat <<END
- <article>
+<article>
 END
 	cat $1$2.$EXT | $FMT
 	cat <<END
- </article>
- <footer>
-  <section>
-   Powered by <a href="http://github.com/antlechrist/gee">gee</a><br />
-   <a href="$2.$EXT">Page source</a> |
-   <a href="http://antlechrist.org/">Main</a>
-  </section>
-  <section>
-   Last modified: $mtime<br />
-   <a href="/LICENSE">© 2009-2010</a>
-   <a href="&#x6d;&#97;&#x69;&#108;&#x74;&#111;&#58;&#97;&#x6e;&#100;
-   &#x72;&#101;&#119;&#x40;&#x61;&#110;&#116;&#x6c;&#101;&#x63;&#104;
-   &#x72;&#105;&#115;&#116;&#x2e;&#111;&#114;&#103;">Andrew Antle</a>
-  </section>
- </footer>
+</article>
+<footer>
+<section class="l">
+Powered by <a href="http://github.com/antlechrist/gee">gee</a><br />
+<a href="$2.$EXT">Page source</a> |
+<a href="http://antlechrist.org/">Main</a>
+</section>
+<section class="r">
+Last modified: $mtime<br />
+<a href="/LICENSE">© 2009-2010</a>
+<a href="mailto:andrew@antlechrist.org">Andrew Antle</a>
+</section>
+</footer>
 </body>
 </html>
 END
