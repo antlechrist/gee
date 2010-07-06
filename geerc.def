@@ -27,6 +27,9 @@ PORT=
 # Example:  /home/$RUSER/public_html .
 DIR=
 
+# The static URI for images, unchanging content
+S=
+
 # Real name. Not required. Used in <author> for atom feed.
 REALNAME=""
 

@@ -86,6 +86,16 @@ page() {
 <head>
 <title>$title</title>
 <meta charset="utf-8" />
+<link href="$S/favicon.png" rel="shortcut icon" />
+<meta name="viewport" content="user-scalable=no, width=device-width" />
+<link href="$S/favicon.png" rel="shortcut icon" />
+<link href="$S/mobile.css" rel="stylesheet"
+      media="only screen and (max-width: 480px)" />
+<link href="$S/style.css" rel="stylesheet"
+      media="screen and (min-width: 481px)" />
+<!--[if IE]>
+<link href="$S/ie.css" rel="stylesheet" media="all" />
+<![endif]-->
 END
 	if test $REVERSE; then
 		cat <<END
@@ -93,8 +103,6 @@ END
 END
 	fi
 	cat <<END
-<link href="/favicon.png" rel="shortcut icon" />
-<link href="/style.css" rel="stylesheet" />
 </head>
 <body>
 <header>
@@ -117,7 +125,7 @@ Powered by <a href="http://github.com/antlechrist/gee">gee</a><br />
 </section>
 <section class="r">
 Last modified: $mtime<br />
-<a href="/LICENSE">© 2009-2010</a>
+<a href="$S/LICENSE">© 2009-2010</a>
 <a href="mailto:andrew@antlechrist.org">Andrew Antle</a>
 </section>
 </footer>
