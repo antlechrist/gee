@@ -1,4 +1,4 @@
-Bookmarking for surf, redux
+BOOKMARKING FOR SURF, REDUX
 ===========================
 
 Following up from the previous post on surf bookmarking:

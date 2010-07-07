@@ -1,4 +1,4 @@
-Bookmarking for surf
+BOOKMARKING FOR SURF
 ====================
 
     hg clone http://hg.thelloyd.net/surf-andy-hg

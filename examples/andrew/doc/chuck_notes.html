@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>andrew.antlechrist.org/doc/chuck_notes</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="user-scalable=no, width=device-width" />
+<link href="/favicon.png" rel="shortcut icon" />
+<link href="/mobile.css" rel="stylesheet"
+      media="only screen and (max-width: 480px)" />
+<link href="/style.css" rel="stylesheet"
+      media="screen and (min-width: 481px)" />
+<!--[if IE]>
+<link href="/ie.css" rel="stylesheet" media="all" />
+<![endif]-->
+</head>
+<body>
+<header>
+<hgroup><h1><a href="/">andrew.antlechrist.org/</a><a href="/doc/">doc/</a></h1></hgroup>
+<nav>
+<ul>
+<li><a href="ardour_build_order.html">ardour build order</a></li>
+<li class="current"><a href="chuck_notes.html">chuck notes</a></li>
+<li><a href="create_mysql_db.html">create mysql db</a></li>
+<li><a href="dd_recover_usb_partition_table.html">dd recover usb partition table</a></li>
+<li><a href="extract_specific_bsdtar.html">extract specific bsdtar</a></li>
+<li><a href="howto_mount_a_sansa_clip_without_hal.html">howto mount a sansa clip without hal</a></li>
+<li><a href="killall.html">killall</a></li>
+<li><a href="lfs_notes.html">lfs notes</a></li>
+<li><a href="mg_cheat_sheet.html">mg cheat sheet</a></li>
+<li><a href="mid3v2_frames.html">mid3v2 frames</a></li>
+<li><a href="mogrify.html">mogrify</a></li>
+<li><a href="my_openbsd_hostname_atu0.html">my openbsd hostname atu0</a></li>
+<li><a href="no_cd_drive_install_openbsd_macppc.html">no cd drive install openbsd macppc</a></li>
+<li><a href="openbsd_user_kernel_config.html">openbsd user kernel config</a></li>
+<li><a href="rsync.html">rsync</a></li>
+<li><a href="set_date_open_firmware.html">set date open firmware</a></li>
+<li><a href="shell_coding_style.html">shell coding style</a></li>
+<li><a href="sizeof_long_int.html">sizeof long int</a></li>
+<li><a href="ssh_x.html">ssh x</a></li>
+<li><a href="tascam_us428_on_linux.html">tascam us428 on linux</a></li>
+<li><a href="transmission_cli.html">transmission cli</a></li>
+<li><a href="usb_drivers_windows_and_virtualbox.html">usb drivers windows and virtualbox</a></li>
+<li><a href="vbox_dd.html">vbox dd</a></li>
+<li><a href="wodim.html">wodim</a></li>
+</ul>
+</nav>
+</header>
+<article>
+<h1>ChucK Notes</h1>
+
+<p>ChucK : Strongly-timed, Concurrent, and On-the-fly
+Audio Programming Language</p>
+
+<h2>Links</h2>
+
+<ul>
+<li><a href="http://wiki.cs.princeton.edu/index.php/ChucK">ChucK wiKi</a></li>
+<li><a href="http://wiki.cs.princeton.edu/index.php/MiniAudicle">miniAudicle wiKi</a></li>
+</ul>
+
+
+<hr />
+
+<p>from the ChucK Manual</p>
+
+<p>``` = unimplemented</p>
+
+<h2>Chapter 5 &ndash; Types, Values and Variables</h2>
+
+<h3>Primitive types</h3>
+
+<ul>
+<li>int: integer (signed)</li>
+<li>float: floating point number (in Chuck, a float is by default double-precision)</li>
+<li>time: ChucKian time</li>
+<li>dur: ChucKian duration</li>
+<li>void: (no type)</li>
+<li>same ```</li>
+</ul>
+
+
+<p><strong>Values (literals)</strong></p>
+
+<p>examples:</p>
+
+<ul>
+<li>int: 42</li>
+<li>int (hexadecimal): 0xaf30</li>
+<li>float: 1.323</li>
+<li>dur: 5.5::second</li>
+</ul>
+
+
+<p><strong>Variables</strong></p>
+
+<p>Variables must be declared before they can be used.</p>
+
+<pre><code>// declare an 'int' called 'foo'
+int foo;
+</code></pre>
+
+<p>Assign a value to an existing variable with the ChucK operator (<code>=&gt;</code>).</p>
+
+<pre><code>// assign value of 2 to 'foo'
+2 =&gt; foo;
+</code></pre>
+
+<p>It&rsquo;s possible to combine the above two statements:</p>
+
+<pre><code>// assign 2 to a new variable 'foo' of type 'int'
+2 =&gt; int foo;
+</code></pre>
+
+<p>To use a variable, refer to it by name:</p>
+
+<pre><code>// debug-print the value of foo
+&lt;&lt;&lt; foo &gt;&gt;&gt;;
+</code></pre>
+
+<p>To update the value of foo:</p>
+
+<pre><code>// multiply 'foo' by 10, assign back to 'foo'
+foo * 10 =&gt; foo;
+
+// or you can use a *=&gt; (mult-chuck)
+10 *=&gt; foo;
+</code></pre>
+
+<p>Duration example:</p>
+
+<pre><code>// assign value of '5 seconds' to new variable bar
+5::second =&gt; dur bar;
+</code></pre>
+
+<p>Once you have bar, you can inductively use it to construct new durations:</p>
+
+<pre><code>// make a measure consist of 4 bars
+4::bar =&gt; dur measure;
+</code></pre>
+
+<p><strong>Reference types:</strong> types which inherit from the object class (wtf? -A)</p>
+
+<p>(I have no idea what these are. -A)</p>
+
+<ul>
+<li>Object: base type from which all classes inherit (directly or indirectly)</li>
+<li>Event: fundamental, extendable synchronization mechanism (again, wtf? -A)</li>
+<li>UGen: extendable unit generator base class</li>
+<li>array: N-dimensional ordered set of data (of the same type)</li>
+<li>string: string (of characters)</li>
+</ul>
+
+
+<p><strong>Complex types</strong></p>
+
+<p>(I don&rsquo;t understand complex numbers; look it up. -A)</p>
+
+<h2>Chapter 6 &ndash; Arrays</h2>
+
+<p><code>&lt;&lt;&lt; placeholder &gt;&gt;&gt;</code></p>
+
+<h2>Chapter 8 &ndash; Control Structures</h2>
+
+<ul>
+<li>if</li>
+<li>else</li>
+<li>while</li>
+<li>until</li>
+<li>for</li>
+<li>repeat</li>
+<li>break</li>
+<li>continue</li>
+<li>return</li>
+<li>switch ```</li>
+</ul>
+
+
+<h3>class keywords</h3>
+
+<ul>
+<li>class</li>
+<li>extends</li>
+<li>public</li>
+<li>static</li>
+<li>pure</li>
+<li>this</li>
+<li>super ```</li>
+<li>interface ```</li>
+<li>implements ```</li>
+<li>protected ```</li>
+<li>private ```</li>
+</ul>
+
+
+<h3>other chuck keywords</h3>
+
+<ul>
+<li>function</li>
+<li>fun</li>
+<li>spork</li>
+<li>const</li>
+<li>new</li>
+</ul>
+
+
+<h3>special</h3>
+
+<h4>values</h4>
+
+<ul>
+<li>now</li>
+<li>true</li>
+<li>false</li>
+<li>maybe</li>
+<li>null</li>
+<li>NULL</li>
+<li>me</li>
+<li>pi</li>
+</ul>
+
+
+<h4>default durations</h4>
+
+<ul>
+<li>samp</li>
+<li>ms</li>
+<li>second</li>
+<li>minute</li>
+<li>hour</li>
+<li>day</li>
+<li>week</li>
+</ul>
+
+
+<h4>global ugens</h4>
+
+<ul>
+<li>dac</li>
+<li>adc</li>
+<li>blackhole</li>
+</ul>
+
+
+<h3>operators</h3>
+
+<ul>
+<li><code>+</code></li>
+<li><code>-</code></li>
+<li><code>*</code></li>
+<li><code>/</code></li>
+<li><code>%</code></li>
+<li><code>=&gt;</code></li>
+<li><code>=&lt;</code></li>
+<li><code>!=&gt;</code></li>
+<li><code>||</code></li>
+<li><code>&amp;&amp;</code></li>
+<li><code>==</code></li>
+<li><code>^</code></li>
+<li><code>&amp;</code></li>
+<li><code>|</code></li>
+<li><code>~</code></li>
+<li><code>::</code></li>
+<li><code>++</code></li>
+<li><code>--</code></li>
+<li><code>&gt;</code></li>
+<li><code>&gt;=</code></li>
+<li><code>&lt;</code></li>
+<li><code>&lt;=</code></li>
+<li><code>@=&gt;</code></li>
+<li><code>+=&gt;</code></li>
+<li><code>-=&gt;</code></li>
+<li><code>*=&gt;</code></li>
+<li><code>/=&gt;</code></li>
+<li><code>%=&gt;</code></li>
+</ul>
+
+</article>
+<footer>
+<section class="l">
+Powered by <a href="http://github.com/antlechrist/gee">gee</a><br />
+<a href="chuck_notes.md">Page source</a> |
+<a href="http://antlechrist.org/">Main</a>
+</section>
+<section class="r">
+Last modified: 2010-05-01 at 22:23<br />
+<a href="/LICENSE">© 2009-2010</a>
+<a href="mailto:andrew@antlechrist.org">Andrew Antle</a>
+</section>
+</footer>
+</body>
+</html>

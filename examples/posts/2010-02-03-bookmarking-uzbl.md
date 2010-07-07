@@ -1,4 +1,4 @@
-Bookmarking for uzbl
+BOOKMARKING FOR UZBL
 ====================
 
 I edited the existing `insert_bookmark.sh` for [uzbl](http://uzbl.org)

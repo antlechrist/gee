@@ -1,4 +1,4 @@
-webcast.berkeley.edu
+WEBCAST.BERKELEY.EDU
 ====================
 
 <http://webcast.berkeley.edu/>

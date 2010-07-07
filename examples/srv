@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# Quick preview of local site.
+# Place in $PATH and run in the top directory of the site you'd like to
+# test, e.g.:
+#
+#     [you@localhost ~/public_html/posts]$ srv
+#
+# Then open your browser at http://localhost:8000 and hrefs and the like
+# should work fine.
+
+# python2.x
+#python -m SimpleHTTPServer
+
+# python3.x
+python3 -m http.server

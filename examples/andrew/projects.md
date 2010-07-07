@@ -1,37 +1,38 @@
 PROJECTS
 ========
 
+GEE
+---
+Site generation tool.
+
+    git clone git://github.com/antlechrist/gee.git
+
+or browse the [repository](http://github.com/antlechrist/gee).
+
 BIN
 ---
+Scripts.
 
-Scripts and stuff.
-
-    git clone http://github.com/antlechrist/bin.git
+    git clone git://github.com/antlechrist/bin.git
 
 or browse the [repository](http://github.com/antlechrist/bin).
 
-
 CONF
 ----
+Configuration files.
 
-Configuration files and stuff.
-
-    git clone http://github.com/antlechrist/conf.git
+    git clone git://github.com/antlechrist/conf.git
 
 or browse the [repository](http://github.com/antlechrist/conf).
 
-
 MINOR EDITS
 -----------
-
 1. <http://ccrma-mail.stanford.edu/pipermail/cmdist/2010-March/005960.html>
 2. <http://nibble.develsec.org/hg/sw/rev/7abe9304d4b5>
 3. <http://nibble.develsec.org/hg/sw/rev/5a3aae8898d7>
 
-
 ROCK AND ROLL
 -------------
-
 Musical things I do and/or did:
 
 * 011881
@@ -51,11 +52,9 @@ Musical things I do and/or did:
 * Wist
   * _Unemotional_... Was slowcore; is now ROCK.
 
-`GIYF`
-
+GIYF
 
 SUCKLESS
 --------
-
 I try to help out with the [suckless wiki](http://hg.suckless.org/sites)
 (unsuccessfully, probably).

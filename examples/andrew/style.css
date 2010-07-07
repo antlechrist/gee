@@ -1,90 +1,102 @@
-/* based on suckless.org and garbe.us */
+/* style.css
+ * Andrew Antle
+ * http://antlechrist.org/
+ */
 
-body {
-	color: #aaa;
-	font-family: sans-serif;
-	font-size: 80%;
-	margin: 0;
-	padding: 0
-}
-
-#container { }
-.edit { font-size: 0.7em; color: #ddd; }
-
-.midHeader { background-color: #ccc; border: 0; }
-.midHeader a { border: 0; color: #111; text-decoration: none; }
-.midHeader img { border: 0; }
-
-.headerTitle { font-size: 1.6em; font-weight: bold; margin: 0 0 0 0.5em; padding: 0.5em; }
-.headerTitle a { border: 0; text-decoration: none; }
-
-#headerSubTitle { font-size: 0.6em; font-weight: normal; margin-left: 1em; }
-
-#menu {
-	width: 100%;
-	clear: both;
-	border: 0;
+/* BEGIN reset.css *********************************************************/
+/* Eric Meyer
+ * http://meyerweb.com/eric/tools/css/reset/
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
 	margin: 0;
 	padding: 0;
-        background-color: #ddd;
-}
-
-#menu ul {
-	margin: 0;
-	padding: 0.3em;
-	list-style-type: none;
-	list-style-image: none;
 	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+:focus { outline: 0; }
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+table { border-collapse: collapse; border-spacing: 0; }
+/* END reset.css ***********************************************************/
+
+/* BEGIN text.css **********************************************************/
+/* 960 Grid System
+ * http://960.gs
+ */
+body {
+	font: 13px/1.5 'DejaVu Sans', 'Helvetica Neue', Arial, FreeSans, sans-serif;
+	margin: auto 5em;
+	padding: 1em;
 }
 
-#menu li { display: inline; line-height: 1.6em; white-space: nowrap; }
-
-#menu ul li a {
-	margin: 0;
-	padding: 0.1em 1ex 0.1em 1ex;
-	color: #336699;
-	background-color: transparent;
-	text-decoration: none;
-	font-size: 1em;
-	border: 0;
-}
-
-#menu ul li a:hover { color: #111; text-decoration: none; }
-
-#menu li.current { color: #000; }
-#menu li.current a { color: #000; }
-
-#main-copy {
-	max-width: 70em;
-	color: #111;
-	margin: 0 auto 0 2em;
-	padding: 1em 3em 2em 1em;
-	border: 0;
-}
-
-#main-copy a { color: #336699; text-decoration: none; }
-#main-copy a:hover { text-decoration: underline; }
-#main-copy h1, #main-copy h2 { color: #666; }
-#main-copy ul { list-style-type: square; }
-
-#footer {
-	background-color: #ddd;
-	color: #111;
-	font-size: 91%;
-	padding: 2em;
+hr {
+	border: 0 #ccc solid;
+	border-top-width: 1px;
 	clear: both;
+	height: 0;
 }
 
-#footer .left { text-align: left; float: left; clear: left; }
-#footer .right { text-align: right; }
-#footer a { color: #111; text-decoration: none; }
-#footer a:hover { text-decoration: underline; }
+h1 { font-size: 25px; }
+h2 { font-size: 23px; }
+h3 { font-size: 21px; }
+h4 { font-size: 19px; }
+h5 { font-size: 17px; }
+h6 { font-size: 15px; }
 
-#published { /*font-size: 0.8em;*/ }
+ol { list-style: decimal; }
+ul { list-style: square; }
+li { margin-left: 30px; }
 
-abbr, acronym { border-bottom: 1px dotted #333; cursor: help; }
-blockquote { border-left: 1px solid #333; font-style: italic; padding: 1em; }
-hr { border-width: 0 0 0.1em 0; border-color: #666; }
+p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul,
+pre, table, address, fieldset {
+	margin-bottom: 20px;
+}
+/* END type.css ************************************************************/
 
-code, pre { font-size: 1.1em }
-pre { margin-left: 2em; }
+/* BEGIN local.css *********************************************************/
+article, aside, figure, footer, header, hgroup, nav, section { display: block }
+
+header { font-size: 1em; padding: 0.1em; }
+header a { border: 0; color: #111; text-decoration: none; }
+header a:hover { color: blue; }
+header h1 { font-size: 1em; font-weight: normal; }
+
+nav { clear: both; width: 100%; }
+nav ul { list-style: none; }
+nav li { display: inline; line-height: 1em; margin: 0.5em; white-space: nowrap; }
+nav ul li a { background-color: transparent; font-size: 1em; text-decoration: none; }
+nav ul li a:hover { color: blue; }
+nav li.current a { color: green; }
+nav li.current a:hover { color: green; }
+
+article { max-width: 70em; }
+article a { color: blue; text-decoration: none; }
+article a:hover { color: blue; text-decoration: underline; }
+article a:visited { color: purple; }
+article a:active { color: red; }
+article a:focus { outline: 1px dotted; }
+
+footer { border-top: 1px solid #ddd; clear: both; padding-top: 1em; }
+footer .l { clear: left; float: left; text-align: left;}
+footer .r { text-align: right; }
+footer a { color: #111; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+blockquote { background: #fffc9c; margin: 1em; padding: 1em; }
+/* END local.css ***********************************************************/

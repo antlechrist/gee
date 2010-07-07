@@ -1,7 +1,7 @@
 George H. Smith's rebuttal of agnosticism
 =========================================
 
-_Some people think this argument is fallacious_. `GIYF`.
+_Some people think this argument is fallacious_. GIYF.
 
 In [Atheism: The Case Against God][] George H. Smith argues that all
 agnosticism is a form of atheism (defined here as "lacking a belief in a

@@ -3,8 +3,8 @@ GENOSITE UPDATE
 
 I've made some modification to the scripts. Check it out.
 
-[genosite.sh](http://bitbucket.org/antlechrist/bin/src/tip/genosite.sh)
------------------------------------------------------------------------
+genosite.sh
+-----------
 
     #!/bin/sh
     
@@ -120,8 +120,8 @@ I've made some modification to the scripts. Check it out.
     
     process "./" "<a href=\"/\">$URL/" /
 
-[genosync.sh](http://bitbucket.org/antlechrist/bin/src/tip/genosync.sh)
------------------------------------------------------------------------
+genosync.sh
+-----------
 
     #!/bin/sh
     
@@ -170,7 +170,7 @@ I've made some modification to the scripts. Check it out.
     
     exit 0
 
-Thanks to [Anselm](http://garbe.us/) for this excellent script. My
-modifications are released under the same
-[license](http://hg.suckless.org/genosite/raw-file/tip/LICENSE) as genosite
-itself. Feel free to use them as you see fit.
+Thanks to [Anselm](http://garbe.us/) for this excellent script.
+My modifications are released under the same
+[license](http://hg.suckless.org/genosite/raw-file/tip/LICENSE)
+as genosite itself. Feel free to use them as you see fit.

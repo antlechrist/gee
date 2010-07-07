@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>andrew.antlechrist.org/doc/create_mysql_db</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="user-scalable=no, width=device-width" />
+<link href="/favicon.png" rel="shortcut icon" />
+<link href="/mobile.css" rel="stylesheet"
+      media="only screen and (max-width: 480px)" />
+<link href="/style.css" rel="stylesheet"
+      media="screen and (min-width: 481px)" />
+<!--[if IE]>
+<link href="/ie.css" rel="stylesheet" media="all" />
+<![endif]-->
+</head>
+<body>
+<header>
+<hgroup><h1><a href="/">andrew.antlechrist.org/</a><a href="/doc/">doc/</a></h1></hgroup>
+<nav>
+<ul>
+<li><a href="ardour_build_order.html">ardour build order</a></li>
+<li><a href="chuck_notes.html">chuck notes</a></li>
+<li class="current"><a href="create_mysql_db.html">create mysql db</a></li>
+<li><a href="dd_recover_usb_partition_table.html">dd recover usb partition table</a></li>
+<li><a href="extract_specific_bsdtar.html">extract specific bsdtar</a></li>
+<li><a href="howto_mount_a_sansa_clip_without_hal.html">howto mount a sansa clip without hal</a></li>
+<li><a href="killall.html">killall</a></li>
+<li><a href="lfs_notes.html">lfs notes</a></li>
+<li><a href="mg_cheat_sheet.html">mg cheat sheet</a></li>
+<li><a href="mid3v2_frames.html">mid3v2 frames</a></li>
+<li><a href="mogrify.html">mogrify</a></li>
+<li><a href="my_openbsd_hostname_atu0.html">my openbsd hostname atu0</a></li>
+<li><a href="no_cd_drive_install_openbsd_macppc.html">no cd drive install openbsd macppc</a></li>
+<li><a href="openbsd_user_kernel_config.html">openbsd user kernel config</a></li>
+<li><a href="rsync.html">rsync</a></li>
+<li><a href="set_date_open_firmware.html">set date open firmware</a></li>
+<li><a href="shell_coding_style.html">shell coding style</a></li>
+<li><a href="sizeof_long_int.html">sizeof long int</a></li>
+<li><a href="ssh_x.html">ssh x</a></li>
+<li><a href="tascam_us428_on_linux.html">tascam us428 on linux</a></li>
+<li><a href="transmission_cli.html">transmission cli</a></li>
+<li><a href="usb_drivers_windows_and_virtualbox.html">usb drivers windows and virtualbox</a></li>
+<li><a href="vbox_dd.html">vbox dd</a></li>
+<li><a href="wodim.html">wodim</a></li>
+</ul>
+</nav>
+</header>
+<article>
+<h1>HOWTO CREATE A MYSQL DATABASE</h1>
+
+<pre><code>[root@griffin ~]# mysql -u root -p
+Enter password:
+
+mysql&gt; CREATE DATABASE world_domination;
+
+mysql&gt; GRANT ALL PRIVILEGES ON world_domination.* to "stewie"@"localhost"
+IDENTIFIED BY "blast-you-vile-woman";
+
+mysql&gt; FLUSH PRIVILEGES;
+
+mysql&gt; EXIT;
+</code></pre>
+
+<p>Disclaimer: I&rsquo;m not a big fan of databases.</p>
+</article>
+<footer>
+<section class="l">
+Powered by <a href="http://github.com/antlechrist/gee">gee</a><br />
+<a href="create_mysql_db.md">Page source</a> |
+<a href="http://antlechrist.org/">Main</a>
+</section>
+<section class="r">
+Last modified: 2010-05-01 at 22:23<br />
+<a href="/LICENSE">© 2009-2010</a>
+<a href="mailto:andrew@antlechrist.org">Andrew Antle</a>
+</section>
+</footer>
+</body>
+</html>

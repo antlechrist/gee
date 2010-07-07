@@ -1,4 +1,4 @@
-bsdtar and Compression Stats
+BSDTAR AND COMPRESSION STATS
 ============================
 
     [andrew@lloyd ~]$ time (bsdtar cf docs.tar docs && gzip docs.tar)

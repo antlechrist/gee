@@ -1,4 +1,4 @@
-Tascam US-428 on Linux
+TASCAM US-428 ON LINUX
 ======================
 
 * Install `alsa-firmware`

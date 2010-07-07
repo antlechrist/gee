@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>posts.antlechrist.org/2010-02-24-genosite-quark-discount-rsync</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="user-scalable=no, width=device-width" />
+<link href="/favicon.png" rel="shortcut icon" />
+<link href="/mobile.css" rel="stylesheet"
+      media="only screen and (max-width: 480px)" />
+<link href="/style.css" rel="stylesheet"
+      media="screen and (min-width: 481px)" />
+<!--[if IE]>
+<link href="/ie.css" rel="stylesheet" media="all" />
+<![endif]-->
+<link href="/atom.xml" rel="alternate" type="application/atom+xml" />
+</head>
+<body>
+<header>
+<hgroup><h1><a href="/">posts.antlechrist.org/</a></h1></hgroup>
+<nav>
+<ul>
+<li><a href="2010-06-25-why-keep-trying.html">2010-06-25-why-keep-trying</a></li>
+<li><a href="2010-06-20-shpod-podcast-client.html">2010-06-20-shpod-podcast-client</a></li>
+<li><a href="2010-06-17-true-hallucinations.html">2010-06-17-true-hallucinations</a></li>
+<li><a href="2010-06-11-archlinux-packages.html">2010-06-11-archlinux-packages</a></li>
+<li><a href="2010-06-07-update.html">2010-06-07-update</a></li>
+<li><a href="2010-05-25-science-faith-repost.html">2010-05-25-science-faith-repost</a></li>
+<li><a href="2010-05-23-rotation.html">2010-05-23-rotation</a></li>
+<li><a href="2010-05-21-infrastructures-repost.html">2010-05-21-infrastructures-repost</a></li>
+<li><a href="2010-05-14-nile-tour.html">2010-05-14-nile-tour</a></li>
+<li><a href="2010-05-12-canada.html">2010-05-12-canada</a></li>
+<li><a href="2010-03-11-genosite-update.html">2010-03-11-genosite-update</a></li>
+<li><a href="2010-03-10-animal-rights-new-man-haters-locke.html">2010-03-10-animal-rights-new-man-haters-locke</a></li>
+<li class='current'><a href="2010-02-24-genosite-quark-discount-rsync.html">2010-02-24-genosite-quark-discount-rsync</a></li>
+<li><a href="2010-02-20-tascam-us-428-linux.html">2010-02-20-tascam-us-428-linux</a></li>
+<li><a href="2010-02-17-bsdtar-compression-stats.html">2010-02-17-bsdtar-compression-stats</a></li>
+<li><a href="2010-02-04-screenshots.html">2010-02-04-screenshots</a></li>
+<li><a href="2010-02-03-bookmarking-uzbl.html">2010-02-03-bookmarking-uzbl</a></li>
+<li><a href="2010-02-02-bookmarking-surf-redux.html">2010-02-02-bookmarking-surf-redux</a></li>
+<li><a href="2010-02-01-bookmarking-surf.html">2010-02-01-bookmarking-surf</a></li>
+<li><a href="2010-01-31-webcast-berkeley-edu.html">2010-01-31-webcast-berkeley-edu</a></li>
+<li><a href="2010-01-30-rotation.html">2010-01-30-rotation</a></li>
+</ul>
+</nav>
+</header>
+<article>
+<h1>GENOSITE, QUARK, DISCOUNT AND RSYNC</h1>
+
+<p>I&rsquo;ve been looking for different solutions to my web goings-on, including
+<a href="http://thelloyd.net/label/">hand coding</a>, <a href="http://jekyllrb.com/">jekyll</a>,
+<a href="http://jaspervdj.be/hakyll/">hakyll</a>, and <a href="http://werc.cat-v.org/">werc</a> (my
+favorite of them all). I&rsquo;ve also tried wiki stuff, most notably
+<a href="http://c2.com/cgi/wiki?SigWik">SigWik</a> and <a href="http://usemod.com/">usemod</a>.
+I&rsquo;ve tried many more as well, but I was unsatisfied. What I&rsquo;m looking for:</p>
+
+<ul>
+<li>It has to be <a href="http://suckless.org/manifest/">simple</a>.</li>
+<li>I want to write in <a href="http://daringfireball.net/projects/markdown">Markdown</a>.
+Writing html is annoying.</li>
+<li>No so-called &lsquo;vanity&rsquo; languages. Ruby, Haskell, rc (werc&rsquo;s biggest
+detraction for me; my fault, because I don&rsquo;t know rc.)</li>
+</ul>
+
+
+<p>Then I started messing around with <a href="http://hg.suckless.org/genosite">genosite</a>,
+and I was happy.</p>
+
+<p>I can write pages in my editor, and categorize them via directories. It takes
+the donkey-work out of managing the site, like werc, but isn&rsquo;t as collaborative
+as werc in terms of real-time editing. But, I don&rsquo;t really care about this.</p>
+
+<p>Then I use <a href="http://hg.suckless.org/quark">quark</a> on port 8000, like with jekyll
+and hakyll, for real-time previewing. It&rsquo;s nice because I can run it in any
+directory as a chroot, and all the relative and absolute links work, and
+stylesheets are correctly applied.</p>
+
+<p>Another nice thing is that I can use any Markdown implementation I want. My
+favorites are <a href="http://www.pell.portland.or.us/~orc/Code/discount/">Discount</a>
+and <a href="http://s01.de/~gottox/index.cgi/proj_smu">smu</a>, both written in C. Once
+I&rsquo;m happy with everything, I can just rsync my local directory to the remote
+server. Easy-peasy.</p>
+
+<p>Here are my modifications:</p>
+
+<h2>OFFICIAL_GENERATE</h2>
+
+<pre><code>#!/bin/sh
+
+# $Id: official_generate,v 1.8 2010/02/24 01:42:08 andrew Exp andrew $
+
+EXT=md
+FMT=markdown
+LC_ALL=en_US.UTF-8
+PATH=/bin:/usr/bin:/usr/local/bin
+PREFIX=/
+URL=andrew.antlechrist.org
+export LC_ALL PATH
+
+menu() {
+    for i in `ls -F $1 | grep -v index.$EXT | sort`
+    do
+        case $i in
+        *.$EXT)
+            base=`echo $i | sed "s/.\$EXT$//"`
+            cleanbase=`echo $base | sed 's/_/ /g'`
+            if test "x$base" = "x$2"
+            then
+                echo "&lt;li class='current'&gt;&lt;a href=\"$base.html\"&gt;$cleanbase&lt;/a&gt;&lt;/li&gt;"
+            else
+                echo "&lt;li&gt;&lt;a href=\"$base.html\"&gt;$cleanbase&lt;/a&gt;&lt;/li&gt;"
+            fi
+            cur=1
+            ;;
+        */)
+            echo "&lt;li&gt;&lt;a href=\"$i\"&gt;$i&lt;/a&gt;&lt;/li&gt;"
+            ;;
+        esac
+    done
+    cat &lt;&lt;END
+&lt;/ul&gt;
+&lt;/div&gt;
+END
+}
+
+page() {
+    mtime=`ls -l $1$2.$EXT | awk '{ print $6" " $7" at " $8 }'`
+    title="$URL`echo $4 | sed 's/.html//'`"
+    cat &lt;&lt;END
+&lt;!doctype html&gt;
+&lt;head&gt;
+&lt;title&gt;$title&lt;/title&gt;
+&lt;meta http-equiv="content-type" content="text/html; charset=utf-8" /&gt;
+&lt;link href="/favicon.png" rel="icon" type="image/png" /&gt;
+&lt;link href="/style.css" rel="stylesheet" type="text/css"  /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="container"&gt;
+&lt;div class="midHeader"&gt;
+&lt;div class="headerTitle"&gt;$3&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="menu"&gt;
+&lt;ul&gt;
+END
+    menu $1 $2
+cat &lt;&lt;END
+&lt;div id="main-copy"&gt;
+END
+    cat $1$2.$EXT | tr -d '\r' | $FMT
+    cat &lt;&lt;END
+&lt;/div&gt;
+&lt;div id="footer"&gt;
+&lt;div class="left"&gt;
+Powered by &lt;a href="http://hg.suckless.org/genosite"&gt;genosite&lt;/a&gt;&lt;br /&gt;
+&lt;a href="$2.$EXT"&gt;Page source&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class="right"&gt;
+Last modified: $mtime&lt;br /&gt;
+&lt;a href="/LICENSE"&gt;Copyright 2009-2010 Andrew Antle&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+END
+}
+
+process() {
+    for i in `ls -F $1`
+    do
+        case $i in
+        *.$EXT)
+            echo processing $1$i
+            base=`echo $i | sed "s/.\$EXT$//"`
+            if test x$base = xindex
+            then
+                title=$3
+            else
+                title=$3$base.html
+            fi
+            page "$1" "$base" "$2" "$title" &gt; "$1$base.html"
+            ;;
+        */)
+            process "$1$i" "$2&lt;/a&gt; &lt;a href='$PREFIX$i'&gt;$i" $3$i
+            ;;
+        *)
+            ;;
+        esac
+    done
+}
+
+if test $1
+then
+    cd $1
+fi
+
+find . -type l | xargs rm -f
+
+process "./" "&lt;a href=\"/\"&gt;$URL/" /
+</code></pre>
+
+<h2>OFFICIAL_UPDATE</h2>
+
+<pre><code>#!/bin/sh
+
+# $Id: official_update,v 1.2 2010/02/24 08:39:10 andrew Exp andrew $
+
+RSYNC=/usr/bin/rsync
+SSH=/usr/bin/ssh
+RUSER=user
+RHOST=remoteserver
+RPATH=public_html/
+LPATH=/home/pub/html/
+
+$RSYNC -avz --delete -e "$SSH -p &lt;port&gt;" $LPATH $RUSER@$RHOST:$RPATH
+</code></pre>
+
+<p>I&rsquo;m really enjoying it.</p>
+
+<h2>References</h2>
+
+<ul>
+<li><a href="http://hg.suckless.org/genosite">genosite</a></li>
+<li><a href="http://hg.suckless.org/quark">quark</a></li>
+<li><a href="http://www.pell.portland.or.us/~orc/Code/discount/">discount</a></li>
+<li><a href="http://rsync.samba.org">rsync</a></li>
+</ul>
+
+</article>
+<footer>
+<section class="l">
+Powered by <a href="http://github.com/antlechrist/gee">gee</a><br />
+<a href="2010-02-24-genosite-quark-discount-rsync.md">Page source</a> |
+<a href="http://antlechrist.org/">Main</a>
+</section>
+<section class="r">
+Last modified: 2010-05-09 at 03:26<br />
+<a href="/LICENSE">© 2009-2010</a>
+<a href="mailto:andrew@antlechrist.org">Andrew Antle</a>
+</section>
+</footer>
+</body>
+</html>
