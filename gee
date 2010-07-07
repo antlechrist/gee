@@ -58,7 +58,7 @@ menu() {
 			cleanbase=`echo $base | sed 's/_/ /g'`
 			if test "x$base" = "x$2"; then
 				echo "\
-<li class='current'><a href=\"$base.html\">$cleanbase</a></li>"
+<li class=\"current\"><a href=\"$base.html\">$cleanbase</a></li>"
 			else
 				echo "\
 <li><a href=\"$base.html\">$cleanbase</a></li>"
