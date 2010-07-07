@@ -1,0 +1,47 @@
+/* mobile.css
+ * Andrew Antle
+ * http://antlechrist.org/
+ */
+
+body {
+	background-color: #fff;
+	color: #111;
+	font-family: Helvetica; 
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+}
+
+header h1 { margin: 0; padding: 0; }
+header h1 a {
+	background-color: #fff;
+	border-bottom: 1px solid #ddd;
+	color: #111;
+	display: block;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 10px 0;
+	text-align: center;
+	text-decoration: none;
+}
+
+nav ul {
+	list-style: none;
+	margin: 10px;
+	padding: 0;
+}
+nav ul li a {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	color: #111;
+	display: block;
+	font-size: 17px;
+	font-weight: bold;
+	margin-bottom: -1px;
+	padding: 12px 10px;
+	text-decoration: none;
+}
+
+article h1, article p { padding: 10px; }
+footer { display: none; }
+img { max-width: 300px; }

@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>posts.antlechrist.org</title>
+<link href="http://posts.antlechrist.org/atom.xml" rel="self"/>
+<link href="http://posts.antlechrist.org/"/>
+<updated>2010-07-06T01:49:00-04:00</updated>
+<id>http://posts.antlechrist.org/</id>
+<author>
+<name>Andrew Antle</name>
+</author>
+<entry>
+<title>WHY KEEP TRYING</title>
+<link href="/2010-06-25-why-keep-trying.html"/>
+<updated>2010-06-25T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-06-25T00:00:00-04:00:/2010-06-25-why-keep-trying.html</id>
+<content type="html">
+
+&lt;p&gt;to work with audio on Windows? I&amp;rsquo;ve been running Linux and/or BSD for almost 4
+years now, and never, not &lt;em&gt;once&lt;/em&gt;, have I had a crash. But doing audio
+production on anything but Windows/Mac is an exercise in futility at this
+point, especially if you use software synthesizers and effects. It&amp;rsquo;s getting
+better with time, but it&amp;rsquo;s still not there unless you want to do academic
+noise experimentation or &amp;lsquo;three chords and a broken heart&amp;rsquo; singer-songwriter
+bullshit. So I installed Windows for the first time in a long while 6 months
+ago:&lt;/p&gt;
+
+&lt;p&gt;iTunes ate almost my entire music collection.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Never&lt;/strong&gt; on Linux/BSD have I had a userland app eat my data.&lt;/p&gt;
+
+&lt;p&gt;With time, I conveniently forgot the hellishness that is Windows and, seduced
+by the siren song of my Superior 2.0 drums and a fat Minimoog, I installed it
+again. It ran OK for three days, one of which I was booted into Slack for most
+of the day, then:&lt;/p&gt;
+
+&lt;p&gt;Spectatcular crash [Black Screen of Death] while running REAPER with 3 tracks.
+3 tracks! How can I trust this to do any &lt;em&gt;actual&lt;/em&gt; work?&lt;/p&gt;
+
+&lt;p&gt;I am too broke to buy a Mac. I am fooked.&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>SHPOD, PODCAST CLIENT</title>
+<link href="/2010-06-20-shpod-podcast-client.html"/>
+<updated>2010-06-20T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-06-20T00:00:00-04:00:/2010-06-20-shpod-podcast-client.html</id>
+<content type="html">
+
+&lt;h2&gt;Description&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;m working on a version of &lt;a href=&quot;http://chessgriffin.com/&quot;&gt;Chess Griffin&lt;/a&gt;&amp;rsquo;s &lt;a href=&quot;http://code.google.com/p/mashpodder&quot;&gt;mashpodder&lt;/a&gt;. Hopefully it
+will be bashism-free, and have less options. Less options are better, in my
+opinion. Set it in a config file and forget it.&lt;/p&gt;
+
+&lt;h2&gt;Development&lt;/h2&gt;
+
+&lt;p&gt;Browse the &lt;a href=&quot;http://github.com/antlechrist/shpod&quot;&gt;repository&lt;/a&gt; or get a copy using &lt;a href=&quot;http://git-scm.com/&quot;&gt;Git&lt;/a&gt; with the following
+command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone git://github.com/antlechrist/shpod.git
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+</entry>
+<entry>
+<title>TRUE HALLUCINATIONS</title>
+<link href="/2010-06-17-true-hallucinations.html"/>
+<updated>2010-06-17T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-06-17T00:00:00-04:00:/2010-06-17-true-hallucinations.html</id>
+<content type="html">
+
+&lt;p&gt;Listening to &amp;ldquo;True Hallucinations&amp;rdquo; by Terence McKenna.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;true-hallucinations.jpg&quot; alt=&quot;True Hallucinations&quot; /&gt;&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>NEW ARCHLINUX PACKAGES</title>
+<link href="/2010-06-11-archlinux-packages.html"/>
+<updated>2010-06-11T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-06-11T00:00:00-04:00:/2010-06-11-archlinux-packages.html</id>
+<content type="html">
+
+&lt;p&gt;I&amp;rsquo;ve built some binary packages from PKGBUILDs I &lt;a href=&quot;http://aur.archlinux.org/packages.php?SeB=m&amp;amp;K=AndrewAntle&quot;&gt;maintain&lt;/a&gt; in the
+&lt;a href=&quot;http://aur.archlinux.org&quot;&gt;AUR&lt;/a&gt;.  Someone might find them useful, especially &lt;code&gt;stumpwm-git&lt;/code&gt; which is a
+pain in the ass to build right now.  Enjoy.&lt;/p&gt;
+
+&lt;p&gt;Get &amp;lsquo;em here:  &lt;a href=&quot;http://antlechrist.org/archlinux/&quot;&gt;http://antlechrist.org/archlinux/&lt;/a&gt;&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>UPDATE</title>
+<link href="/2010-06-07-update.html"/>
+<updated>2010-06-07T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-06-07T00:00:00-04:00:/2010-06-07-update.html</id>
+<content type="html">
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://github.com/antlechrist/gee&quot;&gt;gee&lt;/a&gt; reaches 0.1.&lt;/li&gt;
+&lt;li&gt;I fail to become an Arch Linux Junior Developer.&lt;/li&gt;
+&lt;li&gt;Go listen to &lt;a href=&quot;http://www.podiobooks.com/title/crusade&quot;&gt;Crusade&lt;/a&gt; by
+&lt;a href=&quot;http://www.veinarmor.com/&quot;&gt;Greg Crites&lt;/a&gt;. Tom Waits reading Hunter
+Thompson describing two wackos insulting each other with vitriolic
+hilarity.&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+</entry>
+<entry>
+<title>SCIENCE > FAITH</title>
+<link href="/2010-05-25-science-faith-repost.html"/>
+<updated>2010-05-25T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-05-25T00:00:00-04:00:/2010-05-25-science-faith-repost.html</id>
+<content type="html">
+
+&lt;p&gt;&lt;img src=&quot;http://pablo.enlapc.com/wp-content/uploads/2010/05/fe-y-ciencia.jpg&quot;
+/&gt;&lt;/p&gt;
+
+&lt;p&gt;Speaking of which:&lt;/p&gt;
+
+&lt;p&gt;&lt;img
+src=&quot;http://upload.wikimedia.org/wikipedia/en/b/b8/Faith_No_More_-_The_Very_Best_Definitive_Ultimate_Greatest_Hits_Collection.jpg&quot;
+/&gt;&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>IN ROTATION</title>
+<link href="/2010-05-23-rotation.html"/>
+<updated>2010-05-23T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-05-23T00:00:00-04:00:/2010-05-23-rotation.html</id>
+<content type="html">
+
+&lt;ul&gt;
+&lt;li&gt;Bad Religion / Stranger than Fiction&lt;/li&gt;
+&lt;li&gt;Carcass / Heartwork&lt;/li&gt;
+&lt;li&gt;Elliott Smith / Roman Candle&lt;/li&gt;
+&lt;li&gt;Lamb of God / Ashes of the Wake&lt;/li&gt;
+&lt;li&gt;The Dillinger Escape Plan / Irony Is a Dead Scene&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+</entry>
+<entry>
+<title>INFRASTRUCTURES (REPOST XKCD.COM)</title>
+<link href="/2010-05-21-infrastructures-repost.html"/>
+<updated>2010-05-21T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-05-21T00:00:00-04:00:/2010-05-21-infrastructures-repost.html</id>
+<content type="html">
+
+&lt;p&gt;
+&lt;a href=&quot;http://xkcd.com/743/&quot;&gt;
+&lt;img src=&quot;http://imgs.xkcd.com/comics/infrastructures.png&quot;
+title=&quot;The heartfelt tune it plays is CC licensed, and you can get it from my
+seed on JoinDiaspora.com whenever that project gets going.&quot;
+alt=&quot;Infrastructures&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+
+&lt;p&gt;This is fooking hilarious.&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>NILE TOUR</title>
+<link href="/2010-05-14-nile-tour.html"/>
+<updated>2010-05-14T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-05-14T00:00:00-04:00:/2010-05-14-nile-tour.html</id>
+<content type="html">
+
+&lt;p&gt;The &lt;a href=&quot;http://www.nile-catacombs.net/&quot;&gt;&amp;ldquo;Those Whom the Gods Detest Tour II&amp;rdquo;&lt;/a&gt; is, per usual, not coming to
+Cincinnati. The closest shows are&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;November 1st in Louisville, KY at &lt;a href=&quot;http://www.headlinerslouisville.com/&quot;&gt;Headliners&lt;/a&gt; (an awesome venue)&lt;/li&gt;
+&lt;li&gt;November 6th in Cleveland, OH at &lt;a href=&quot;http://www.peabodys.com/&quot;&gt;Peabody&amp;rsquo;s&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;which sucks. When did good bands stop coming to Cincinnati? When they realized
+that Cincinnati is a shithole. Musically, at least.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;P.S. &lt;a href=&quot;http://en.wikipedia.org/wiki/Math_the_Band&quot;&gt;Math the Band&lt;/a&gt; is playing at Headliners on May 16th! Awesome!&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;P.P.S. Converge is playing there on May 26th! Cincinnati sucks donkey balls.
+Horse the Band is playing Peabody&amp;rsquo;s tomorrow. AAAGGGHHH!&lt;/em&gt;&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>CANADA</title>
+<link href="/2010-05-12-canada.html"/>
+<updated>2010-05-12T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-05-12T00:00:00-04:00:/2010-05-12-canada.html</id>
+<content type="html">
+
+&lt;h2&gt;IF SOMEONE SAYS &amp;lsquo;ARE YOU OKAY&amp;rsquo; YOU SAY?&lt;/h2&gt;
+
+&lt;p&gt;Serves You Fucking Right &amp;ndash; The Lies&lt;/p&gt;
+
+&lt;h2&gt;HOW WOULD YOU DESCRIBE YOURSELF?&lt;/h2&gt;
+
+&lt;p&gt;The Funeral Portrait &amp;ndash; Opeth&lt;/p&gt;
+
+&lt;h2&gt;WHAT DO YOU LOOK FOR IN A GUY/GIRL?&lt;/h2&gt;
+
+&lt;p&gt;Even You &amp;ndash; Dinosaur Jr&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Appropriate lyrics, anyways&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;HOW DO YOU FEEL TODAY?&lt;/h2&gt;
+
+&lt;p&gt;Derelict Herds &amp;ndash; Opeth&lt;/p&gt;
+
+&lt;h2&gt;WHAT IS YOUR LIFE&amp;rsquo;S PURPOSE?&lt;/h2&gt;
+
+&lt;p&gt;Hope Leaves &amp;ndash; Opeth&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;What&amp;rsquo;s up with all the Opeth? I do have a shitload on my Space mp3 phaser.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;WHAT&amp;rsquo;S YOUR MOTTO?&lt;/h2&gt;
+
+&lt;p&gt;Home &amp;ndash; Depeche Mode&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;I&lt;/em&gt; am &lt;em&gt;a shut-in.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;WHAT DO YOUR FRIENDS THINK OF YOU?&lt;/h2&gt;
+
+&lt;p&gt;Ruglen Holon &amp;ndash; Aphex Twin&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;That&amp;rsquo;s about right.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;WHAT DO YOUR PARENTS THINK OF YOU?&lt;/h2&gt;
+
+&lt;p&gt;Bunkhouse &amp;ndash; The Murder City Devils&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Ha&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;WHAT DO YOU THINK ABOUT VERY OFTEN?&lt;/h2&gt;
+
+&lt;p&gt;Flash of the Blade &amp;ndash; Iron Maiden&lt;/p&gt;
+
+&lt;h2&gt;WHAT DO YOU THINK ABOUT YOUR FIRST KISS?&lt;/h2&gt;
+
+&lt;p&gt;Sea &amp;ndash; Low&lt;/p&gt;
+
+&lt;h2&gt;WHAT DO YOU THINK OF YOUR BEST FRIEND?&lt;/h2&gt;
+
+&lt;p&gt;Fuck Machine &amp;ndash; Propagandhi&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;HA! Mr. Randolfini&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;WHAT IS YOUR LIFE STORY?&lt;/h2&gt;
+
+&lt;p&gt;Untitled #6 &amp;ndash; Sigur Rós&lt;/p&gt;
+
+&lt;h2&gt;WHAT DO YOU WANT TO BE WHEN YOU GROW UP?&lt;/h2&gt;
+
+&lt;p&gt;Fuck! &amp;ndash; Propagandhi&lt;/p&gt;
+
+&lt;h2&gt;WHAT DO YOU THINK WHEN YOU SEE THE PERSON YOU LIKE?&lt;/h2&gt;
+
+&lt;p&gt;Screen Me &amp;ndash; Turnus&lt;/p&gt;
+
+&lt;h2&gt;WHAT WILL YOU DANCE TO AT YOUR WEDDING?&lt;/h2&gt;
+
+&lt;p&gt;Dael &amp;ndash; Autechre&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Catchy&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;WHAT WILL THEY PLAY AT YOUR FUNERAL?&lt;/h2&gt;
+
+&lt;p&gt;Single File &amp;ndash; Elliott Smith&lt;/p&gt;
+
+&lt;h2&gt;WHAT IS YOUR HOBBY/INTEREST?&lt;/h2&gt;
+
+&lt;p&gt;Fall Apart &amp;ndash; Avail&lt;/p&gt;
+
+&lt;h2&gt;WHAT IS YOUR BIGGEST FEAR?&lt;/h2&gt;
+
+&lt;p&gt;Crazy Nights &amp;ndash; Therion&lt;/p&gt;
+
+&lt;h2&gt;WHAT IS YOUR BIGGEST SECRET?&lt;/h2&gt;
+
+&lt;p&gt;Beneath the Mire &amp;ndash; Opeth&lt;/p&gt;
+
+&lt;h2&gt;WHAT DO YOU WANT RIGHT NOW?&lt;/h2&gt;
+
+&lt;p&gt;Manchester United &amp;ndash; The Giraffes&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;HA! The whole team! At once!&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;WHAT DO YOU THINK OF YOUR FRIENDS?&lt;/h2&gt;
+
+&lt;p&gt;Red Ran Amber &amp;ndash; Pelican&lt;/p&gt;
+
+&lt;h2&gt;HOW WILL YOUR CHILDREN MOST EMBARRASS YOU?&lt;/h2&gt;
+
+&lt;p&gt;A message of avarice rained rained down upon us and carried us away
+into false dreams of endless riches &amp;ndash; Red Sparowes&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Fitting&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;WHAT WILL BE THE FIRST THING ST PETER TELLS YOU AT THE PEARLY GATES?&lt;/h2&gt;
+
+&lt;p&gt;The Lying Lies and Dirty Secrets of Miss Erica Court &amp;ndash; Coheed and Cambria&lt;/p&gt;
+
+&lt;h2&gt;WHAT WILL YOU POST THIS AS?&lt;/h2&gt;
+
+&lt;p&gt;Canada &amp;ndash; Shellac&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>GENOSITE UPDATE</title>
+<link href="/2010-03-11-genosite-update.html"/>
+<updated>2010-03-11T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-03-11T00:00:00-04:00:/2010-03-11-genosite-update.html</id>
+<content type="html">
+
+&lt;p&gt;I&amp;rsquo;ve made some modification to the scripts. Check it out.&lt;/p&gt;
+
+&lt;h2&gt;genosite.sh&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/sh
+
+EXT=md
+FMT=markdown
+LC_ALL=en_US.UTF-8
+PATH=/bin:/usr/bin
+PREFIX=/
+URL=andrew.antlechrist.org
+export LC_ALL PATH
+
+menu() {
+    for i in `ls -F $1 | grep -v index.$EXT | sort`
+    do
+        case $i in
+        *.$EXT)
+            base=`echo $i | sed &quot;s/.\$EXT$//&quot;`
+            cleanbase=`echo $base | sed &apos;s/_/ /g&apos;`
+            if test &quot;x$base&quot; = &quot;x$2&quot;
+            then
+                echo &quot;&amp;lt;li class=&apos;current&apos;&amp;gt;&amp;lt;a href=\&quot;$base.html\&quot;&amp;gt;$cleanbase&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&quot;
+            else
+                echo &quot;&amp;lt;li&amp;gt;&amp;lt;a href=\&quot;$base.html\&quot;&amp;gt;$cleanbase&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&quot;
+            fi
+            cur=1
+            ;;
+        */)
+            echo &quot;&amp;lt;li&amp;gt;&amp;lt;a href=\&quot;$i\&quot;&amp;gt;$i&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&quot;
+            ;;
+        esac
+    done
+    cat &amp;lt;&amp;lt;END
+&amp;lt;/ul&amp;gt;
+&amp;lt;/div&amp;gt;
+END
+}
+
+page() {
+    mtime=`ls -l $1$2.$EXT | awk &apos;{ print $6&quot; &quot; $7&quot; at &quot; $8 }&apos;`
+    title=&quot;$URL`echo $4 | sed &apos;s/.html//&apos;`&quot;
+    cat &amp;lt;&amp;lt;END
+&amp;lt;!doctype html&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;title&amp;gt;$title&amp;lt;/title&amp;gt;
+&amp;lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&amp;gt;
+&amp;lt;link href=&quot;/favicon.png&quot; rel=&quot;icon&quot; type=&quot;image/png&quot; /&amp;gt;
+&amp;lt;link href=&quot;/style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;div id=&quot;container&quot;&amp;gt;
+&amp;lt;div class=&quot;midHeader&quot;&amp;gt;
+&amp;lt;div class=&quot;headerTitle&quot;&amp;gt;$3&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div id=&quot;menu&quot;&amp;gt;
+&amp;lt;ul&amp;gt;
+END
+    menu $1 $2
+cat &amp;lt;&amp;lt;END
+&amp;lt;div id=&quot;main-copy&quot;&amp;gt;
+END
+    cat $1$2.$EXT | tr -d &apos;\r&apos; | $FMT
+    cat &amp;lt;&amp;lt;END
+&amp;lt;/div&amp;gt;
+&amp;lt;div id=&quot;footer&quot;&amp;gt;
+&amp;lt;div class=&quot;left&quot;&amp;gt;
+Powered by &amp;lt;a href=&quot;http://hg.suckless.org/genosite&quot;&amp;gt;genosite&amp;lt;/a&amp;gt;,
+&amp;lt;a href=&quot;http://www.pell.portland.or.us/~orc/Code/discount/&quot;&amp;gt;discount&amp;lt;/a&amp;gt;,
+and &amp;lt;a href=&quot;http://www.vim.org/&quot;&amp;gt;vim&amp;lt;/a&amp;gt;&amp;lt;br /&amp;gt;
+&amp;lt;a href=&quot;$2.$EXT&quot;&amp;gt;Page source&amp;lt;/a&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div class=&quot;right&quot;&amp;gt;
+Last modified: $mtime&amp;lt;br /&amp;gt;
+&amp;lt;a href=&quot;/LICENSE&quot;&amp;gt;Copyright 2009-2010 Andrew Antle&amp;lt;/a&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+END
+}
+
+process() {
+    for i in `ls -F $1`
+    do
+        case $i in
+        *.$EXT)
+            echo processing $1$i
+            base=`echo $i | sed &quot;s/.\$EXT$//&quot;`
+            if test x$base = xindex
+            then
+                title=$3
+            else
+                title=$3$base.html
+            fi
+            page &quot;$1&quot; &quot;$base&quot; &quot;$2&quot; &quot;$title&quot; &amp;gt; &quot;$1$base.html&quot;
+            ;;
+        */)
+            process &quot;$1$i&quot; &quot;$2&amp;lt;/a&amp;gt; &amp;lt;a href=\&quot;$PREFIX`echo $1 | \
+            sed &apos;s/.\///&apos;`$i\&quot;&amp;gt;$i&quot; $3$i
+            ;;
+        *)
+            ;;
+        esac
+    done
+}
+
+if test $1
+then
+    cd $1
+fi
+
+find . -type l | xargs rm -f
+
+process &quot;./&quot; &quot;&amp;lt;a href=\&quot;/\&quot;&amp;gt;$URL/&quot; /
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;genosync.sh&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/sh
+
+# file:   ~/bin/genosync.sh
+# author: Andrew Antle - http://antlechrist.org/
+# date:   2010-03-11
+
+RSYNC=/usr/bin/rsync
+SSH=/usr/bin/ssh
+PORT=portnumber
+RUSER=username
+RHOST=example.org
+RPATH=/remotepath/
+LPATH=/localpath/
+
+do_pull() {
+    $RSYNC -avz --delete -e &quot;$SSH -p $PORT&quot; $RUSER@$RHOST:$RPATH $LPATH
+}
+
+do_push() {
+    $RSYNC -avz --delete -e &quot;$SSH -p $PORT&quot; $LPATH $RUSER@$RHOST:$RPATH
+}
+
+case &quot;$1&quot; in
+    -l | --pull)
+        do_pull
+        if [ $? -gt 0 ]; then
+            echo FAILED
+            exit 1
+        else
+            echo SUCCESS
+        fi
+        ;;
+    -s | --push)
+        do_push
+        if [ $? -gt 0 ]; then
+            echo FAILED
+            exit 1
+        else
+            echo SUCCESS
+        fi
+        ;;
+    *)
+        echo &quot;usage: `basename $0` {-l, --pull|-s, --push}&quot;
+esac
+
+exit 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Thanks to &lt;a href=&quot;http://garbe.us/&quot;&gt;Anselm&lt;/a&gt; for this excellent script.
+My modifications are released under the same
+&lt;a href=&quot;http://hg.suckless.org/genosite/raw-file/tip/LICENSE&quot;&gt;license&lt;/a&gt;
+as genosite itself. Feel free to use them as you see fit.&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>ANIMAL "RIGHTS" AND THE NEW MAN HATERS</title>
+<link href="/2010-03-10-animal-rights-new-man-haters-locke.html"/>
+<updated>2010-03-10T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-03-10T00:00:00-04:00:/2010-03-10-animal-rights-new-man-haters-locke.html</id>
+<content type="html">
+
+&lt;blockquote&gt;&lt;p&gt;To claim that man&amp;rsquo;s use of animals is immoral is to claim that
+we have no right to our own lives and that we must sacrifice our welfare for
+the sake of creatures who cannot think or grasp the concept of morality. It is
+to elevate amoral animals to a moral level higher than ourselves&amp;mdash;a flagrant
+contradiction.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Thank you for the clarity of thought that was so desperately missing earlier
+this evening. &amp;mdash; Andrew&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.aynrand.org/site/PageServer?pagename=objectivism_animal_rights&quot;&gt;http://www.aynrand.org/site/PageServer?pagename=objectivism_animal_rights&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;By &lt;a href=&quot;http://www.edwinlocke.com/&quot;&gt;Edwin Locke, Ph.D.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Recently a sixth grade student threatened to bomb the headquarters of a
+prominent corporation, the Gillette Company. Gillette&amp;rsquo;s &amp;ldquo;crime&amp;rdquo;? The use of
+animals to test the safety of their products. This student&amp;rsquo;s role models have
+not been so hesitant. In the name of so-called &amp;ldquo;animal rights,&amp;rdquo; terrorists
+have committed hundreds of violent crimes. They have vandalized or fire bombed
+meat companies, fur stores, fast-food restaurants, leather shops and medical
+research laboratories across North America. The animal &amp;ldquo;rights&amp;rdquo; movement,
+however, is not about the humane treatment of animals. Its goal is the
+animalistic treatment of human beings.&lt;/p&gt;
+
+&lt;p&gt;According to these terrorists, it is immoral to eat meat, to wear fur coats or
+leather shoes, and to use animals in research&amp;mdash;even if it would lead to cures
+for deadly diseases. The terrorists are unmoved by the indisputable fact that
+animal research saves human lives. PETA (People for the Ethical Treatment of
+Animals) makes this frighteningly clear: &amp;ldquo;Even if animal tests produced a cure
+for AIDS, we&amp;rsquo;d be against it.&amp;rdquo; &lt;em&gt;(Vogue, 1989 -A)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;How do the animal &amp;ldquo;rights&amp;rdquo; advocates try to justify their position? As someone
+who has debated them for years on college campuses and in the media, I know
+firsthand that the whole movement is based on a single invalid syllogism,
+namely: men feel pain and have rights; animals feel pain; therefore, animals
+have rights. This argument is entirely specious, because man&amp;rsquo;s rights do not
+depend on his ability to feel pain; they depend on his ability to think.&lt;/p&gt;
+
+&lt;p&gt;Rights are ethical principles applicable only to beings capable of reason and
+choice. There is only one fundamental right: a man&amp;rsquo;s right to his own life. To
+live successfully, man must use his rational faculty&amp;mdash;which is exercised by
+choice. The choice to think can be negated only by the use of physical force.
+To survive and prosper, men must be free from the initiation of force by other
+men&amp;mdash;free to use their own minds to guide their choices and actions. Rights
+protect men against the use of force by other men.&lt;/p&gt;
+
+&lt;p&gt;None of this is relevant to animals. Animals do not survive by rational
+thought (nor by sign languages allegedly taught to them by psychologists).
+They survive through inborn reflexes and sensory-perceptual association. They
+cannot reason. They cannot learn a code of ethics. A lion is not immoral for
+eating a zebra (or even for attacking a man). Predation is their natural and
+only means of survival; they do not have the capacity to learn any other.&lt;/p&gt;
+
+&lt;p&gt;Only man has the power to deal with other members of his own species by
+voluntary means: rational persuasion and a code of morality rather than
+physical force. To claim that man&amp;rsquo;s use of animals is immoral is to claim that
+we have no right to our own lives and that we must sacrifice our welfare for
+the sake of creatures who cannot think or grasp the concept of morality. It is
+to elevate amoral animals to a moral level higher than ourselves&amp;mdash;a flagrant
+contradiction. Of course, it is proper not to cause animals gratuitous
+suffering. But this is not the same as inventing a bill of rights for them&amp;mdash;at
+our expense.&lt;/p&gt;
+
+&lt;p&gt;The granting of fictional rights to animals is not an innocent error. We do
+not have to speculate about the motive, because the animal &amp;ldquo;rights&amp;rdquo; advocates
+have revealed it quite openly. Again from PETA: &amp;ldquo;Mankind is the biggest blight
+on the face of the earth&amp;rdquo;; &amp;ldquo;I do not believe that a human being has a right to
+life&amp;rdquo;; &amp;ldquo;I would rather have medical experiments done on our children than on
+animals.&amp;rdquo; These self-styled lovers of life do not love animals; rather, they
+hate men.&lt;/p&gt;
+
+&lt;p&gt;The animal &amp;ldquo;rights&amp;rdquo; terrorists are like the Unabomber and Oklahoma City
+bombers. They are not idealists seeking justice, but nihilists seeking
+destruction for the sake of destruction. They do not want to uplift mankind,
+to help him progress from the swamp to the stars. They want mankind&amp;rsquo;s
+destruction; they want him not just to stay in the swamp but to disappear into
+its muck.&lt;/p&gt;
+
+&lt;p&gt;There is only one proper answer to such people: to declare proudly and
+defiantly, in the name of morality, a man&amp;rsquo;s right to his life, his liberty,
+and the pursuit of his own happiness.&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>GENOSITE, QUARK, DISCOUNT AND RSYNC</title>
+<link href="/2010-02-24-genosite-quark-discount-rsync.html"/>
+<updated>2010-02-24T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-02-24T00:00:00-04:00:/2010-02-24-genosite-quark-discount-rsync.html</id>
+<content type="html">
+
+&lt;p&gt;I&amp;rsquo;ve been looking for different solutions to my web goings-on, including
+&lt;a href=&quot;http://thelloyd.net/label/&quot;&gt;hand coding&lt;/a&gt;, &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;jekyll&lt;/a&gt;,
+&lt;a href=&quot;http://jaspervdj.be/hakyll/&quot;&gt;hakyll&lt;/a&gt;, and &lt;a href=&quot;http://werc.cat-v.org/&quot;&gt;werc&lt;/a&gt; (my
+favorite of them all). I&amp;rsquo;ve also tried wiki stuff, most notably
+&lt;a href=&quot;http://c2.com/cgi/wiki?SigWik&quot;&gt;SigWik&lt;/a&gt; and &lt;a href=&quot;http://usemod.com/&quot;&gt;usemod&lt;/a&gt;.
+I&amp;rsquo;ve tried many more as well, but I was unsatisfied. What I&amp;rsquo;m looking for:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It has to be &lt;a href=&quot;http://suckless.org/manifest/&quot;&gt;simple&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;I want to write in &lt;a href=&quot;http://daringfireball.net/projects/markdown&quot;&gt;Markdown&lt;/a&gt;.
+Writing html is annoying.&lt;/li&gt;
+&lt;li&gt;No so-called &amp;lsquo;vanity&amp;rsquo; languages. Ruby, Haskell, rc (werc&amp;rsquo;s biggest
+detraction for me; my fault, because I don&amp;rsquo;t know rc.)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Then I started messing around with &lt;a href=&quot;http://hg.suckless.org/genosite&quot;&gt;genosite&lt;/a&gt;,
+and I was happy.&lt;/p&gt;
+
+&lt;p&gt;I can write pages in my editor, and categorize them via directories. It takes
+the donkey-work out of managing the site, like werc, but isn&amp;rsquo;t as collaborative
+as werc in terms of real-time editing. But, I don&amp;rsquo;t really care about this.&lt;/p&gt;
+
+&lt;p&gt;Then I use &lt;a href=&quot;http://hg.suckless.org/quark&quot;&gt;quark&lt;/a&gt; on port 8000, like with jekyll
+and hakyll, for real-time previewing. It&amp;rsquo;s nice because I can run it in any
+directory as a chroot, and all the relative and absolute links work, and
+stylesheets are correctly applied.&lt;/p&gt;
+
+&lt;p&gt;Another nice thing is that I can use any Markdown implementation I want. My
+favorites are &lt;a href=&quot;http://www.pell.portland.or.us/~orc/Code/discount/&quot;&gt;Discount&lt;/a&gt;
+and &lt;a href=&quot;http://s01.de/~gottox/index.cgi/proj_smu&quot;&gt;smu&lt;/a&gt;, both written in C. Once
+I&amp;rsquo;m happy with everything, I can just rsync my local directory to the remote
+server. Easy-peasy.&lt;/p&gt;
+
+&lt;p&gt;Here are my modifications:&lt;/p&gt;
+
+&lt;h2&gt;OFFICIAL_GENERATE&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/sh
+
+# $Id: official_generate,v 1.8 2010/02/24 01:42:08 andrew Exp andrew $
+
+EXT=md
+FMT=markdown
+LC_ALL=en_US.UTF-8
+PATH=/bin:/usr/bin:/usr/local/bin
+PREFIX=/
+URL=andrew.antlechrist.org
+export LC_ALL PATH
+
+menu() {
+    for i in `ls -F $1 | grep -v index.$EXT | sort`
+    do
+        case $i in
+        *.$EXT)
+            base=`echo $i | sed &quot;s/.\$EXT$//&quot;`
+            cleanbase=`echo $base | sed &apos;s/_/ /g&apos;`
+            if test &quot;x$base&quot; = &quot;x$2&quot;
+            then
+                echo &quot;&amp;lt;li class=&apos;current&apos;&amp;gt;&amp;lt;a href=\&quot;$base.html\&quot;&amp;gt;$cleanbase&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&quot;
+            else
+                echo &quot;&amp;lt;li&amp;gt;&amp;lt;a href=\&quot;$base.html\&quot;&amp;gt;$cleanbase&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&quot;
+            fi
+            cur=1
+            ;;
+        */)
+            echo &quot;&amp;lt;li&amp;gt;&amp;lt;a href=\&quot;$i\&quot;&amp;gt;$i&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&quot;
+            ;;
+        esac
+    done
+    cat &amp;lt;&amp;lt;END
+&amp;lt;/ul&amp;gt;
+&amp;lt;/div&amp;gt;
+END
+}
+
+page() {
+    mtime=`ls -l $1$2.$EXT | awk &apos;{ print $6&quot; &quot; $7&quot; at &quot; $8 }&apos;`
+    title=&quot;$URL`echo $4 | sed &apos;s/.html//&apos;`&quot;
+    cat &amp;lt;&amp;lt;END
+&amp;lt;!doctype html&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;title&amp;gt;$title&amp;lt;/title&amp;gt;
+&amp;lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&amp;gt;
+&amp;lt;link href=&quot;/favicon.png&quot; rel=&quot;icon&quot; type=&quot;image/png&quot; /&amp;gt;
+&amp;lt;link href=&quot;/style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;  /&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;div id=&quot;container&quot;&amp;gt;
+&amp;lt;div class=&quot;midHeader&quot;&amp;gt;
+&amp;lt;div class=&quot;headerTitle&quot;&amp;gt;$3&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div id=&quot;menu&quot;&amp;gt;
+&amp;lt;ul&amp;gt;
+END
+    menu $1 $2
+cat &amp;lt;&amp;lt;END
+&amp;lt;div id=&quot;main-copy&quot;&amp;gt;
+END
+    cat $1$2.$EXT | tr -d &apos;\r&apos; | $FMT
+    cat &amp;lt;&amp;lt;END
+&amp;lt;/div&amp;gt;
+&amp;lt;div id=&quot;footer&quot;&amp;gt;
+&amp;lt;div class=&quot;left&quot;&amp;gt;
+Powered by &amp;lt;a href=&quot;http://hg.suckless.org/genosite&quot;&amp;gt;genosite&amp;lt;/a&amp;gt;&amp;lt;br /&amp;gt;
+&amp;lt;a href=&quot;$2.$EXT&quot;&amp;gt;Page source&amp;lt;/a&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;div class=&quot;right&quot;&amp;gt;
+Last modified: $mtime&amp;lt;br /&amp;gt;
+&amp;lt;a href=&quot;/LICENSE&quot;&amp;gt;Copyright 2009-2010 Andrew Antle&amp;lt;/a&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+END
+}
+
+process() {
+    for i in `ls -F $1`
+    do
+        case $i in
+        *.$EXT)
+            echo processing $1$i
+            base=`echo $i | sed &quot;s/.\$EXT$//&quot;`
+            if test x$base = xindex
+            then
+                title=$3
+            else
+                title=$3$base.html
+            fi
+            page &quot;$1&quot; &quot;$base&quot; &quot;$2&quot; &quot;$title&quot; &amp;gt; &quot;$1$base.html&quot;
+            ;;
+        */)
+            process &quot;$1$i&quot; &quot;$2&amp;lt;/a&amp;gt; &amp;lt;a href=&apos;$PREFIX$i&apos;&amp;gt;$i&quot; $3$i
+            ;;
+        *)
+            ;;
+        esac
+    done
+}
+
+if test $1
+then
+    cd $1
+fi
+
+find . -type l | xargs rm -f
+
+process &quot;./&quot; &quot;&amp;lt;a href=\&quot;/\&quot;&amp;gt;$URL/&quot; /
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;OFFICIAL_UPDATE&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/sh
+
+# $Id: official_update,v 1.2 2010/02/24 08:39:10 andrew Exp andrew $
+
+RSYNC=/usr/bin/rsync
+SSH=/usr/bin/ssh
+RUSER=user
+RHOST=remoteserver
+RPATH=public_html/
+LPATH=/home/pub/html/
+
+$RSYNC -avz --delete -e &quot;$SSH -p &amp;lt;port&amp;gt;&quot; $LPATH $RUSER@$RHOST:$RPATH
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I&amp;rsquo;m really enjoying it.&lt;/p&gt;
+
+&lt;h2&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://hg.suckless.org/genosite&quot;&gt;genosite&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://hg.suckless.org/quark&quot;&gt;quark&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.pell.portland.or.us/~orc/Code/discount/&quot;&gt;discount&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://rsync.samba.org&quot;&gt;rsync&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+</entry>
+<entry>
+<title>TASCAM US-428 ON LINUX</title>
+<link href="/2010-02-20-tascam-us-428-linux.html"/>
+<updated>2010-02-20T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-02-20T00:00:00-04:00:/2010-02-20-tascam-us-428-linux.html</id>
+<content type="html">
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Install &lt;code&gt;alsa-firmware&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  # pacman -S alsa-firmware
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Get &lt;code&gt;alsa-tools&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  $ wget ftp://ftp.alsa-project.org/pub/tools/alsa-tools-1.0.22.tar.bz2
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Install &lt;code&gt;usx2yloader&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  $ tar xvf alsa-tools-1.0.22.tar.bz2
+  $ cd alsa-tools-1.0.22/usx2yloader
+  $ ./configure --help
+  $ ./configure --prefix=/usr
+  $ make
+  $ sudo make install
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Install &lt;code&gt;us428control&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  $ cd ../us428control
+  $ ./configure --help
+  $ ./configure --prefix=/usr
+  $ make
+  $ sudo make install
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Install &lt;a href=&quot;http://aur.archlinux.org/packages.php?ID=2897&quot;&gt;&lt;code&gt;fxload&lt;/code&gt;&lt;/a&gt; from AUR&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Install &lt;a href=&quot;http://aur.archlinux.org/packages.php?ID=14648&quot;&gt;&lt;code&gt;udev-tascam-usx2y&lt;/code&gt;&lt;/a&gt; from AUR&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Check the udev rules&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  # vi /etc/udev/rules.d/55-tascam-usx2y.rules
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and edit accordingly. (For me, remove &amp;lsquo;-m mixxx&amp;rsquo;)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Turn it on and rock out&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;References&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.ctaf.free.fr/dokuwiki/doku.php?id=archlinux#us428&quot;&gt;udev rules&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.alsa-project.org/main/index.php/Matrix:Module-usb-usx2y&quot;&gt;alsa page on usx2y&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+</entry>
+<entry>
+<title>BSDTAR AND COMPRESSION STATS</title>
+<link href="/2010-02-17-bsdtar-compression-stats.html"/>
+<updated>2010-02-17T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-02-17T00:00:00-04:00:/2010-02-17-bsdtar-compression-stats.html</id>
+<content type="html">
+
+&lt;pre&gt;&lt;code&gt;[andrew@lloyd ~]$ time (bsdtar cf docs.tar docs &amp;amp;&amp;amp; gzip docs.tar)
+(; bsdtar cf docs.tar docs &amp;amp;&amp;amp; gzip docs.tar; )  7.57s user 0.42s system 94% cpu 8.464 total
+[andrew@lloyd ~]$ time (bsdtar cf docs.tar docs &amp;amp;&amp;amp; bzip2 docs.tar)    
+(; bsdtar cf docs.tar docs &amp;amp;&amp;amp; bzip2 docs.tar; )  38.67s user 0.43s system 99% cpu 39.150 total
+[andrew@lloyd ~]$ time (bsdtar cf docs.tar docs &amp;amp;&amp;amp; ba7 docs.tar.7z docs.tar)
+(; bsdtar cf docs.tar docs &amp;amp;&amp;amp; ba7 docs.tar.7z docs.tar; )  78.51s user 1.08s system 177% cpu 44.846 total
+[andrew@lloyd ~]$ time (bsdtar cf docs.tar docs &amp;amp;&amp;amp; xz docs.tar)             
+(; bsdtar cf docs.tar docs &amp;amp;&amp;amp; xz docs.tar; )  73.54s user 0.62s system 99% cpu 1:14.20 total
+[andrew@lloyd ~]$ du -s docs*
+129380  docs
+99044   docs.tar.7z
+104720  docs.tar.bz2
+105264  docs.tar.gz
+99404   docs.tar.xz
+[andrew@lloyd ~]$ du -sh docs*
+127M    docs
+97M     docs.tar.7z
+103M    docs.tar.bz2
+103M    docs.tar.gz
+98M     docs.tar.xz
+[andrew@lloyd ~]$ cat bin/ba7 
+#!/bin/sh
+
+7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on $1 $2
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+</entry>
+<entry>
+<title>SCREENSHOTS</title>
+<link href="/2010-02-04-screenshots.html"/>
+<updated>2010-02-04T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-02-04T00:00:00-04:00:/2010-02-04-screenshots.html</id>
+<content type="html">
+
+&lt;p&gt;
+&lt;a href=&quot;2010-02-04-clean.png&quot;&gt;
+&lt;img src=&quot;2010-02-04-clean-t.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; 
+&lt;a href=&quot;2010-02-04-dirty.png&quot;&gt;
+&lt;img src=&quot;2010-02-04-dirty-t.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+&lt;/p&gt;
+
+</content>
+</entry>
+<entry>
+<title>BOOKMARKING FOR UZBL</title>
+<link href="/2010-02-03-bookmarking-uzbl.html"/>
+<updated>2010-02-03T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-02-03T00:00:00-04:00:/2010-02-03-bookmarking-uzbl.html</id>
+<content type="html">
+
+&lt;p&gt;I edited the existing &lt;code&gt;insert_bookmark.sh&lt;/code&gt; for &lt;a href=&quot;http://uzbl.org&quot;&gt;uzbl&lt;/a&gt;
+to make it (hopefully) simpler and remove a dependency on
+&lt;a href=&quot;http://live.gnome.org/Zenity&quot;&gt;zenity&lt;/a&gt;. Check it out:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+
+# A {replacement,alternative option} for insert_bookmark.sh
+
+[ -d &quot;${XDG_DATA_HOME:-$HOME/.local/share}/uzbl&quot; ] || exit 1
+
+file=${XDG_DATA_HOME:-$HOME/.local/share}/uzbl/bookmarks
+entry=`echo &quot;$6 $7\t&quot; | dmenu -b -l`
+
+if [ $? != 0 ]; then exit &quot;$?&quot;; fi
+
+(echo -e &quot;$entry&quot; &amp;amp;&amp;amp; cat $file) | sort -u &amp;gt; $file.$$ &amp;amp;&amp;amp; mv $file.$$ $file
+
+true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Clone the &amp;lsquo;repo&amp;rsquo; :) with the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;hg clone http://hg.thelloyd.net/uib
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It&amp;rsquo;s kind of a mash up between Lorenzo&amp;rsquo;s &lt;a href=&quot;http://surf.suckless.org&quot;&gt;surf&lt;/a&gt;
+solution and the one included with uzbl. Feedback would be cool.&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>BOOKMARKING FOR SURF, REDUX</title>
+<link href="/2010-02-02-bookmarking-surf-redux.html"/>
+<updated>2010-02-02T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-02-02T00:00:00-04:00:/2010-02-02-bookmarking-surf-redux.html</id>
+<content type="html">
+
+&lt;p&gt;Following up from the previous post on surf bookmarking:&lt;/p&gt;
+
+&lt;p&gt;Lorenzo found a very nice solution, involving no shell scripts.
+&lt;a href=&quot;http://lbolla.wordpress.com/2010/01/09/surf-browser-hints-3/&quot;&gt;Check it out&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I agree with L on the not using surf thing. I look at it, mess around with it
+and stuff, but I&amp;rsquo;m not geeky enough to use it full time.&lt;/p&gt;
+
+&lt;p&gt;L&amp;rsquo;s config.h can be found on the
+&lt;a href=&quot;http://surf.suckless.org/files/simple_bookmarking_redux&quot;&gt;suckless wiki&lt;/a&gt;
+as well.&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>BOOKMARKING FOR SURF</title>
+<link href="/2010-02-01-bookmarking-surf.html"/>
+<updated>2010-02-01T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-02-01T00:00:00-04:00:/2010-02-01-bookmarking-surf.html</id>
+<content type="html">
+
+&lt;pre&gt;&lt;code&gt;hg clone http://hg.thelloyd.net/surf-andy-hg
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let me know how shit it is.&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>WEBCAST.BERKELEY.EDU</title>
+<link href="/2010-01-31-webcast-berkeley-edu.html"/>
+<updated>2010-01-31T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-01-31T00:00:00-04:00:/2010-01-31-webcast-berkeley-edu.html</id>
+<content type="html">
+
+&lt;p&gt;&lt;a href=&quot;http://webcast.berkeley.edu/&quot;&gt;http://webcast.berkeley.edu/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Great resource with audio and video lectures.&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>IN ROTATION </title>
+<link href="/2010-01-30-rotation.html"/>
+<updated>2010-01-30T00:00:00-04:00</updated>
+<id>tag:posts.antlechrist.org,2010-01-30T00:00:00-04:00:/2010-01-30-rotation.html</id>
+<content type="html">
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Baroness_(band)&quot;&gt;Baroness&lt;/a&gt;
+/ &lt;a href=&quot;http://en.wikipedia.org/wiki/Blue_Record&quot;&gt;Blue Record&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Coheed_and_Cambria&quot;&gt;Coheed and Cambria&lt;/a&gt;
+/ &lt;a href=&quot;http://en.wikipedia.org/wiki/Good_Apollo,_I&apos;m_Burning_Star_IV,_Volume_One:_From_Fear_Through_the_Eyes_of_Madness&quot;&gt;Good Apollo, I&amp;rsquo;m Burning Star IV, Vol. I: From Fear Through the Eyes of Madness&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Dinosaur_Jr.&quot;&gt;Dinosaur Jr.&lt;/a&gt;
+/ &lt;a href=&quot;http://en.wikipedia.org/wiki/Without_a_Sound&quot;&gt;Without a Sound&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.thegiraffes.com/&quot;&gt;The Giraffes&lt;/a&gt;
+/ &lt;a href=&quot;http://amzn.com/B000QQVWG4&quot;&gt;Helping You Help Yourself&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/This_Town_Needs_Guns&quot;&gt;This Town Needs Guns&lt;/a&gt;
+/ &lt;a href=&quot;http://en.wikipedia.org/wiki/Animals_(This_Town_Needs_Guns_album)&quot;&gt;Animals&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+</entry>
+</feed>
