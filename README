@@ -1,7 +1,7 @@
 GEE - site generation tool
 ==========================
 
-gee is a site generation tool based on genosite.  Inspired by working with
+gee is a site generation tool based on genosite. Inspired by working with
 sw, werc, and vee.
 
 * [genosite](http://hg.suckless.org/genosite)
@@ -11,39 +11,29 @@ sw, werc, and vee.
 
 The main development site is
 
-    http://github.com/antlechrist/gee
-
-but there is a Mercurial repo at
-
-    http://bitbucket.org/antlechrist/gee
-
-if you're into that kind of thing.  I really dislike bitbucket though, so it
-isn't _as_ up to date.
+	http://github.com/antlechrist/gee
 
 Recommendations
 ---------------
-
 * [awk](http://www.cs.princeton.edu/~bwk/btl.mirror/)
-  * the One True Awk.
+	* the One True Awk.
 * [discount](http://www.pell.portland.or.us/~orc/Code/discount)
-  * for markdown formatting.
+	* for markdown formatting.
 * [mdocml](http://mdocml.bsd.lv/)
-  * for displaying manpages.
+	* for displaying manpages.
 * [rsync](http://rsync.samba.org/)
-  * for synchronizing directories.
+	* for synchronizing directories.
 
 Installation
 ------------
-
 Edit config.mk to match your local setup (gee is installed into
 the `/usr/local` namespace by default.
 
 Afterwards, enter the following command to install gee (if
 necessary as root):
 
-    make install
+	make install
 
 Configuration
 -------------
-
 Copy `geerc.def` to `~/.geerc` and fill in your specific details.
