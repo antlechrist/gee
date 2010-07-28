@@ -55,7 +55,7 @@ menu() {
 		case $i in
 		*.$EXT)
 			base=`echo $i | sed "s/.\$EXT$//"`
-			cleanbase=`echo $base | sed 's/_/ /g'`
+			cleanbase=`echo $base | sed 's/-/ /g'`
 			if test "x$base" = "x$2"; then
 				echo "\
 <li class=\"current\"><a href=\"$base.html\">$cleanbase</a></li>"
