@@ -1,0 +1,71 @@
+0.1 | 2010-06-07
+----------------
+Andrew Antle (21):
+      Initial commit
+      Added a README
+      Added my version of genosite and the blagh app from werc
+      Just added [-r] to sort for the posts. Should use a case statement to toggle that switch
+      Updated README
+      Updated README
+      Staging
+      Moved over to gee!
+      Added LICENSE. Shoutouts and that to Anselm :)
+      Initial stab at feed generation
+      Added wikipedia link on Atom
+      Added initial attempt at manpage
+      Changed config file to ~/.acp.conf; generalized manpage
+      Remove my name, file location
+      See manpage
+      Major refactoring! Maybe I should tag this.
+      Translated from markdown to mdoc
+      Added rudimentary Makefile
+      Following Arch Shell Coding Style; updated manpage
+      Added examples.  Made manpage more in the suckless style.
+      Was testing with ash.  Doh!
+
+0.2 | 2010-06-12
+----------------
+Andrew Antle (11):
+      Ignore releases/*
+      Move back to mdoc from OpenBSD for manpage.
+      Added installation and configuration info to README. Made geerc.def to keep default, cp to ~/.geerc .
+      Added echo statements to Makefile, honed manpage
+      First attempt at fixing $mtime on Arch Linux
+      Fixed usage msg
+      Implemented feed.
+      Make write to atom.xml local to ./ . Added some VARIABLATIONALS!
+      Added atom autodiscovery, added -f to manpage.
+      Removed tr -d '\r' from page function; Quieted down
+      Deleted examples/posts/atom.xml
+
+0.3 | 2010-07-05
+----------------
+Andrew Antle (14):
+      Commented geerc.def . Boy did it need it.
+      Removed l and m opts; updated gee.1
+      A little note about hg repo
+      Fixed entry tag
+      Cleaned up geerc.def
+      Made it a little more verbose
+      Remove check for Arch
+      Remove line
+      Cleaned up footer
+      Moving to HTML5
+      HTML5ification complete?
+      Added S variable for static URI; changes for mobile CSS
+      Fixed favicon link duplicate
+      Tried static dir... more trouble than it's worth. 0.3 coming up.
+
+0.4 | 2010-07-30
+----------------
+Andrew Antle (9):
+      Standardized current class of li
+      Added new examples, srv helper script
+      Doh! Try again.
+      OK, cool. No html stuff. Generate it yo'self!
+      Changed to ISC license
+      Cleaned up README
+      Removed Arch fix from BUGS in manual
+      Added HTML entity for ©
+      Change _ to - ; nicer URLs
+
