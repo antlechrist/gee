@@ -105,7 +105,7 @@ END
 </head>
 <body>
 <header>
-<hgroup><h1>$3</a></h1></hgroup>
+<h1>$3</a></h1>
 <nav>
 <ul>
 END
