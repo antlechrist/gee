@@ -79,7 +79,7 @@ END
 
 page() {
 	mtime=`ls -l $1$2.$EXT | awk '{ print $6" at "$7 }'`
-	title="$URL`echo $4 | sed 's/.html//'`"
+	title="$URL`echo $4 | sed 's/.html$//'`"
 	cat <<END
 <!DOCTYPE html>
 <html lang="en">
