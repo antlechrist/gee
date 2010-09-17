@@ -10,6 +10,9 @@ FMT=markdown
 # Used in creation of atom feed.
 XMLESCOPTS=""
 
+# Time style. See ls(1). If you change this, remember to hack the awk!
+TIMESTYLE="--time-style=long-iso"
+
 PREFIX=/
 FULLURL=
 POSTURL=
