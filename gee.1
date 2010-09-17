@@ -1,4 +1,4 @@
-.Dd $Mdocdate: June 07 2010 $
+.Dd $Mdocdate: Sep 17 2010 $
 .Dt GEE 1
 .Os
 .
@@ -90,17 +90,8 @@ Write a new post:
 Ha!  Surely you must be joking.
 Write me a mail, or post it on the github wikka.
 .Pp
-$mtime is very system specific.
-It depends on which fields print where.
-The default works fine on Slackware 13.1.
-
-The fix is to specify iso format. Coming soon
-.Pp
 Get rid of all aberrant hard-coded paths, you ingrate!
 Such as
-.Pa posts
-in
-.Pp
 .Dl $EDITOR $DIR/posts/`date '+%Y-%m-%d'`-"$OPTARG".md
 .Pp
 Abstract from specific sync method.
